@@ -191,7 +191,7 @@ img {
 .avatar {
   width: 56px;
   height: 56px;
-  border-radius: 18px;
+  border-radius: var(--avatar-radius, 20px);
   overflow: hidden;
   display: grid;
   place-items: center;
@@ -222,6 +222,11 @@ img {
 .leader-head h3,
 .fixture-main h3 {
   margin: 0;
+}
+
+.fixture-main h3 {
+  line-height: 1.35;
+  letter-spacing: 0.01em;
 }
 
 .leader-head p,
@@ -273,6 +278,72 @@ img {
   font-style: normal;
   color: var(--coral);
   font-weight: 700;
+}
+
+.tuner-controls {
+  display: grid;
+  gap: 16px;
+}
+
+.tuner-field {
+  display: grid;
+  gap: 8px;
+}
+
+.tuner-field span {
+  font-family: "Space Mono", monospace;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.tuner-field select,
+.tuner-field textarea,
+.tuner-field input[type="range"] {
+  width: 100%;
+}
+
+.tuner-field select,
+.tuner-field textarea {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.82);
+  padding: 12px 14px;
+  font: inherit;
+  color: var(--ink);
+}
+
+.tuner-field textarea {
+  min-height: 180px;
+  resize: vertical;
+  font-family: "Space Mono", monospace;
+  font-size: 0.72rem;
+  line-height: 1.45;
+}
+
+.tuner-preview-card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 14px;
+  align-items: center;
+  padding: 14px;
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.tuner-preview-card p,
+.tuner-preview-card strong {
+  margin: 0;
+}
+
+.tuner-preview-card p {
+  margin-top: 4px;
+  color: var(--muted);
+}
+
+.avatar-preview {
+  width: 88px;
+  height: 88px;
 }
 
 .fixture-row {
