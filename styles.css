@@ -122,6 +122,12 @@ img {
   align-items: start;
 }
 
+.column-stack {
+  display: grid;
+  gap: 22px;
+  align-content: start;
+}
+
 .panel {
   padding: 24px;
   border-radius: 24px;
@@ -147,16 +153,6 @@ img {
   margin: 0;
   color: var(--muted);
   font-size: 0.78rem;
-}
-
-.leaderboard-panel,
-.scoring-panel {
-  grid-column: 1 / 2;
-}
-
-.sidebar-panel,
-.fixtures-panel {
-  grid-column: 2 / 3;
 }
 
 .leaderboard-list,
@@ -403,13 +399,6 @@ img {
   .hero,
   .layout {
     grid-template-columns: 1fr;
-  }
-
-  .leaderboard-panel,
-  .scoring-panel,
-  .sidebar-panel,
-  .fixtures-panel {
-    grid-column: auto;
   }
 
   .mini-grid {

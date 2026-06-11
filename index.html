@@ -24,48 +24,52 @@
       </header>
 
       <main class="layout">
-        <section class="panel leaderboard-panel">
-          <div class="panel-heading">
-            <div>
-              <p class="section-kicker">Leaderboard</p>
-              <h2>Current table</h2>
+        <div class="column-stack main-column">
+          <section class="panel leaderboard-panel">
+            <div class="panel-heading">
+              <div>
+                <p class="section-kicker">Leaderboard</p>
+                <h2>Current table</h2>
+              </div>
+              <p class="panel-note" id="last-updated"></p>
             </div>
-            <p class="panel-note" id="last-updated"></p>
-          </div>
-          <div class="leaderboard-list" id="leaderboard-list"></div>
-        </section>
+            <div class="leaderboard-list" id="leaderboard-list"></div>
+          </section>
 
-        <section class="panel sidebar-panel">
-          <div class="panel-heading">
-            <div>
-              <p class="section-kicker">Standings</p>
-              <h2>Pot winners</h2>
+          <section class="panel scoring-panel">
+            <div class="panel-heading">
+              <div>
+                <p class="section-kicker">Scoring</p>
+                <h2>How points are calculated</h2>
+              </div>
             </div>
-          </div>
-          <div class="mini-grid" id="pot-leaders"></div>
-        </section>
+            <div class="scoring-table-wrap">
+              <table class="scoring-table" id="scoring-table"></table>
+            </div>
+          </section>
+        </div>
 
-        <section class="panel fixtures-panel">
-          <div class="panel-heading">
-            <div>
-              <p class="section-kicker">Fixtures</p>
-              <h2>Conflict tracker</h2>
+        <div class="column-stack side-column">
+          <section class="panel sidebar-panel">
+            <div class="panel-heading">
+              <div>
+                <p class="section-kicker">Standings</p>
+                <h2>Pot winners</h2>
+              </div>
             </div>
-          </div>
-          <div class="fixture-list" id="fixture-list"></div>
-        </section>
+            <div class="mini-grid" id="pot-leaders"></div>
+          </section>
 
-        <section class="panel scoring-panel">
-          <div class="panel-heading">
-            <div>
-              <p class="section-kicker">Scoring</p>
-              <h2>How points are calculated</h2>
+          <section class="panel fixtures-panel">
+            <div class="panel-heading">
+              <div>
+                <p class="section-kicker">Fixtures</p>
+                <h2>Conflict tracker</h2>
+              </div>
             </div>
-          </div>
-          <div class="scoring-table-wrap">
-            <table class="scoring-table" id="scoring-table"></table>
-          </div>
-        </section>
+            <div class="fixture-list" id="fixture-list"></div>
+          </section>
+        </div>
       </main>
     </div>
 
