@@ -23,7 +23,7 @@ body {
   font-family: "Bricolage Grotesque", sans-serif;
   color: var(--ink);
   background:
-    linear-gradient(rgba(252, 250, 246, 0.82), rgba(247, 243, 235, 0.9)),
+    linear-gradient(rgba(252, 250, 246, 0.28), rgba(247, 243, 235, 0.34)),
     radial-gradient(circle at top left, rgba(15, 118, 110, 0.18), transparent 28%),
     radial-gradient(circle at top right, rgba(198, 92, 70, 0.12), transparent 22%),
     url("./background.jpg") center / cover fixed no-repeat,
