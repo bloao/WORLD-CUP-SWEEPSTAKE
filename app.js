@@ -278,8 +278,10 @@ function renderHeroSummary(leaderboard) {
 
 function renderLeaderboard(leaderboard) {
   const container = document.getElementById("leaderboard-list");
+  const highestScore = leaderboard[0]?.total ?? 0;
   container.innerHTML = leaderboard
     .map((entrant, index) => {
+      const isTopRow = highestScore > 0 && entrant.total === highestScore;
       const picksMarkup = entrant.breakdown
         .map(
           (item) => `
@@ -293,7 +295,7 @@ function renderLeaderboard(leaderboard) {
         .join("");
 
       return `
-        <article class="leader-row ${index === 0 ? "top" : ""}">
+        <article class="leader-row ${isTopRow ? "top" : ""}">
           <div class="rank-chip">${index + 1}</div>
           <div class="avatar ${entrant.photoUrl ? "has-photo" : ""}">
             ${
