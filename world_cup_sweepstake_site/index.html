@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>World Cup Sweepstake</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700;800&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">World Cup Sweepstake</p>
+          <h1>Leaderboard chaos, profile pics, and fixture clashes in one place.</h1>
+          <p class="intro">
+            Public site for the sweepstake. Scores update from a single data file, the
+            rankings auto-sort, and overlapping kickoffs get flagged.
+          </p>
+        </div>
+        <div class="hero-panel" id="hero-summary"></div>
+      </header>
+
+      <main class="layout">
+        <section class="panel leaderboard-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="section-kicker">Leaderboard</p>
+              <h2>Current table</h2>
+            </div>
+            <p class="panel-note" id="last-updated"></p>
+          </div>
+          <div class="leaderboard-list" id="leaderboard-list"></div>
+        </section>
+
+        <section class="panel sidebar-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="section-kicker">Standings</p>
+              <h2>Pot winners</h2>
+            </div>
+          </div>
+          <div class="mini-grid" id="pot-leaders"></div>
+        </section>
+
+        <section class="panel picks-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="section-kicker">Entrants</p>
+              <h2>Teams by person</h2>
+            </div>
+          </div>
+          <div class="cards-grid" id="entrant-cards"></div>
+        </section>
+
+        <section class="panel fixtures-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="section-kicker">Fixtures</p>
+              <h2>Conflict tracker</h2>
+            </div>
+            <p class="panel-note">Rows marked red share the same kickoff slot.</p>
+          </div>
+          <div class="fixture-list" id="fixture-list"></div>
+        </section>
+
+        <section class="panel scoring-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="section-kicker">Scoring</p>
+              <h2>How points are calculated</h2>
+            </div>
+          </div>
+          <div class="scoring-table-wrap">
+            <table class="scoring-table" id="scoring-table"></table>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
