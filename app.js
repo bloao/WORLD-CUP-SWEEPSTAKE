@@ -179,11 +179,13 @@ function formatKickoff(value) {
       weekday: "short",
       day: "numeric",
       month: "short",
+      timeZone: "Europe/London",
     }).format(date),
     time: new Intl.DateTimeFormat("en-GB", {
       hour: "2-digit",
       minute: "2-digit",
       hour12: false,
+      timeZone: "Europe/London",
     }).format(date),
   };
 }
@@ -364,6 +366,12 @@ function countConflicts() {
   return buildConflictGroups().length;
 }
 
+function ownersForTeam(team) {
+  return sweepstakeData.entrants
+    .filter((entrant) => Object.values(entrant.picks).includes(team))
+    .map((entrant) => displayName(entrant.name));
+}
+
 function renderFixtures() {
   const conflicts = buildConflictGroups();
   const container = document.getElementById("fixture-list");
@@ -384,12 +392,26 @@ function renderFixtures() {
     .map((group) => {
       const kickoff = formatKickoff(group.kickoffUtc);
       const games = group.fixtures
-        .map((fixture) => `
+        .map((fixture) => {
+          const team1Owners = ownersForTeam(fixture.team1);
+          const team2Owners = ownersForTeam(fixture.team2);
+
+          return `
           <div class="fixture-game">
-            <strong>${fixture.match}</strong>
-            <small>${fixture.entrants.map(displayName).join(", ") || "No sweepstake team involved"}</small>
+            <div class="fixture-matchup">
+              <div class="fixture-team">
+                <strong>${fixture.team1}</strong>
+                <small>${team1Owners.join(", ") || "No one"}</small>
+              </div>
+              <div class="fixture-versus">vs</div>
+              <div class="fixture-team">
+                <strong>${fixture.team2}</strong>
+                <small>${team2Owners.join(", ") || "No one"}</small>
+              </div>
+            </div>
           </div>
-        `)
+        `;
+        })
         .join("");
 
       return `
@@ -403,7 +425,7 @@ function renderFixtures() {
           </div>
           <div class="fixture-main">
             <h3>${group.entrants.map(displayName).join(", ")}</h3>
-            <p>${group.fixtures.length} games at the same kickoff</p>
+            <p>${group.fixtures.length} games at the same UK kickoff</p>
           </div>
           <div class="fixture-games">${games}</div>
         </article>
