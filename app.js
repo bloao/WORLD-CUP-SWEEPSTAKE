@@ -8,15 +8,15 @@ const sweepstakeData = {
     "Pot E": { first: 6, second: 3, ro32: 6, ro16: 6, qf: 5, sf: 8, third: 9, runnerUp: 10, winner: 30 },
   },
   entrants: [
-    { name: "bloao", photoUrl: "./bloaopfp.JPG", photoPosition: "50% 80%", picks: { "Pot A": "Spain", "Pot B": "Germany", "Pot C": "Norway", "Pot D": "Panama", "Pot E": "South Africa" } },
-    { name: "breamy", photoUrl: "./breamypfp.jpg", photoPosition: "50% 64%", picks: { "Pot A": "Netherlands", "Pot B": "United States", "Pot C": "Egypt", "Pot D": "Côte d’Ivoire", "Pot E": "Bosnia and Herzegovina" } },
-    { name: "mitch", photoUrl: "./mitchpfp.jpg", photoPosition: "50% 50%", picks: { "Pot A": "Portugal", "Pot B": "Mexico", "Pot C": "Canada", "Pot D": "Paraguay", "Pot E": "Uzbekistan" } },
-    { name: "silk", photoUrl: "./silkpfp.jpg", photoPosition: "50% 50%", picks: { "Pot A": "Belgium", "Pot B": "Switzerland", "Pot C": "Austria", "Pot D": "Tunisia", "Pot E": "Cabo Verde" } },
-    { name: "lick", photoUrl: "./lickpfp.jpg", photoPosition: "74% 74%", picks: { "Pot A": "Argentina", "Pot B": "Senegal", "Pot C": "Iran", "Pot D": "DR Congo", "Pot E": "Haiti" } },
-    { name: "rat", photoUrl: "./ratpfp.JPG", photoPosition: "50% 50%", picks: { "Pot A": "Brazil", "Pot B": "Croatia", "Pot C": "Ecuador", "Pot D": "Türkiye", "Pot E": "Curaçao" } },
-    { name: "oja", photoUrl: "./ojapfp.jpg", photoPosition: "50% 60%", picks: { "Pot A": "England", "Pot B": "Japan", "Pot C": "South Korea", "Pot D": "Czech Republic", "Pot E": "New Zealand" } },
-    { name: "bill", photoUrl: "./billpfp.jpg", photoPosition: "50% 50%", picks: { "Pot A": "Morocco", "Pot B": "Uruguay", "Pot C": "Algeria", "Pot D": "Scotland", "Pot E": "Ghana" } },
-    { name: "gash", photoUrl: "./gashpfp.JPG", photoPosition: "50% 82%", picks: { "Pot A": "France", "Pot B": "Colombia", "Pot C": "Australia", "Pot D": "Qatar", "Pot E": "Saudi Arabia" } },
+    { name: "bloao", photoUrl: "./bloaopfp.JPG", photoPosition: "50% 80%", photoScale: 1.45, picks: { "Pot A": "Spain", "Pot B": "Germany", "Pot C": "Norway", "Pot D": "Panama", "Pot E": "South Africa" } },
+    { name: "breamy", photoUrl: "./breamypfp.jpg", photoPosition: "50% 64%", photoScale: 1.15, picks: { "Pot A": "Netherlands", "Pot B": "United States", "Pot C": "Egypt", "Pot D": "Côte d’Ivoire", "Pot E": "Bosnia and Herzegovina" } },
+    { name: "mitch", photoUrl: "./mitchpfp.jpg", photoPosition: "50% 50%", photoScale: 1, picks: { "Pot A": "Portugal", "Pot B": "Mexico", "Pot C": "Canada", "Pot D": "Paraguay", "Pot E": "Uzbekistan" } },
+    { name: "silk", photoUrl: "./silkpfp.jpg", photoPosition: "50% 50%", photoScale: 1, picks: { "Pot A": "Belgium", "Pot B": "Switzerland", "Pot C": "Austria", "Pot D": "Tunisia", "Pot E": "Cabo Verde" } },
+    { name: "lick", photoUrl: "./lickpfp.jpg", photoPosition: "74% 74%", photoScale: 1.15, picks: { "Pot A": "Argentina", "Pot B": "Senegal", "Pot C": "Iran", "Pot D": "DR Congo", "Pot E": "Haiti" } },
+    { name: "rat", photoUrl: "./ratpfp.JPG", photoPosition: "50% 50%", photoScale: 1, picks: { "Pot A": "Brazil", "Pot B": "Croatia", "Pot C": "Ecuador", "Pot D": "Türkiye", "Pot E": "Curaçao" } },
+    { name: "oja", photoUrl: "./ojapfp.jpg", photoPosition: "50% 60%", photoScale: 1.1, picks: { "Pot A": "England", "Pot B": "Japan", "Pot C": "South Korea", "Pot D": "Czech Republic", "Pot E": "New Zealand" } },
+    { name: "bill", photoUrl: "./billpfp.jpg", photoPosition: "50% 50%", photoScale: 1, picks: { "Pot A": "Morocco", "Pot B": "Uruguay", "Pot C": "Algeria", "Pot D": "Scotland", "Pot E": "Ghana" } },
+    { name: "gash", photoUrl: "./gashpfp.JPG", photoPosition: "50% 82%", photoScale: 1.2, picks: { "Pot A": "France", "Pot B": "Colombia", "Pot C": "Australia", "Pot D": "Qatar", "Pot E": "Saudi Arabia" } },
   ],
   teamResults: {
     Spain: {},
@@ -111,8 +111,10 @@ function avatarImageMarkup(entrant) {
   }
 
   const style = entrant.photoPosition
-    ? ` style="object-position: ${entrant.photoPosition};"`
-    : "";
+    ? ` style="object-position: ${entrant.photoPosition}; --photo-scale: ${entrant.photoScale || 1};"`
+    : entrant.photoScale
+      ? ` style="--photo-scale: ${entrant.photoScale};"`
+      : "";
 
   return `<img src="${entrant.photoUrl}" alt="${entrant.name}"${style} />`;
 }
