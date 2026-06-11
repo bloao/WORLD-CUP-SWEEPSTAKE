@@ -154,10 +154,6 @@ const scoringOrder = [
   ["winner", "Winner"],
 ];
 
-const avatarTunerState = {
-  selectedEntrant: sweepstakeData.entrants[0]?.name || "",
-};
-
 function titleCase(text) {
   return text.charAt(0).toUpperCase() + text.slice(1);
 }
@@ -206,27 +202,6 @@ function avatarImageMarkup(entrant) {
   const style = ` style="--photo-scale: ${entrant.photoScale || 1}; --photo-offset-x: ${entrant.photoOffsetX || "0%"}; --photo-offset-y: ${entrant.photoOffsetY || "0%"}; --avatar-radius: ${entrant.photoRadius || "20px"};"`;
 
   return `<img src="${entrant.photoUrl}" alt="${entrant.name}"${style} />`;
-}
-
-function parsePercentValue(value) {
-  return Number.parseFloat(String(value || "0").replace("%", "")) || 0;
-}
-
-function parsePixelValue(value) {
-  return Number.parseFloat(String(value || "20").replace("px", "")) || 20;
-}
-
-function getEntrantByName(name) {
-  return sweepstakeData.entrants.find((entrant) => entrant.name === name) || sweepstakeData.entrants[0];
-}
-
-function avatarSettingsFor(entrant) {
-  return {
-    scale: Number(entrant.photoScale || 1),
-    offsetX: parsePercentValue(entrant.photoOffsetX),
-    offsetY: parsePercentValue(entrant.photoOffsetY),
-    radius: parsePixelValue(entrant.photoRadius),
-  };
 }
 
 function buildTeamPotLookup() {
@@ -475,119 +450,6 @@ function renderScoringTable() {
   `;
 }
 
-function renderAvatarTuner() {
-  const container = document.getElementById("avatar-tuner");
-  if (!container) {
-    return;
-  }
-
-  const entrant = getEntrantByName(avatarTunerState.selectedEntrant);
-  const settings = avatarSettingsFor(entrant);
-  const options = sweepstakeData.entrants
-    .map((item) => `
-      <option value="${item.name}" ${item.name === entrant.name ? "selected" : ""}>${displayName(item.name)}</option>
-    `)
-    .join("");
-
-  const exportLines = sweepstakeData.entrants
-    .map((item) => {
-      const itemSettings = avatarSettingsFor(item);
-      return `${item.name}: { photoScale: ${itemSettings.scale.toFixed(2)}, photoOffsetX: "${itemSettings.offsetX}%", photoOffsetY: "${itemSettings.offsetY}%", photoRadius: "${itemSettings.radius}px" }`;
-    })
-    .join("\n");
-
-  container.innerHTML = `
-    <div class="tuner-controls">
-      <label class="tuner-field">
-        <span>Person</span>
-        <select id="tuner-entrant">${options}</select>
-      </label>
-
-      <div class="tuner-preview-card">
-        <div class="avatar avatar-preview ${entrant.photoUrl ? "has-photo" : ""}">
-          ${avatarImageMarkup(entrant)}
-        </div>
-        <div>
-          <strong>${displayName(entrant.name)}</strong>
-          <p>Adjust live, then copy the values below.</p>
-        </div>
-      </div>
-
-      <label class="tuner-field">
-        <span>Zoom: <strong id="tuner-scale-value">${settings.scale.toFixed(2)}</strong></span>
-        <input id="tuner-scale" type="range" min="0.70" max="1.80" step="0.01" value="${settings.scale}" />
-      </label>
-
-      <label class="tuner-field">
-        <span>Move left/right: <strong id="tuner-x-value">${settings.offsetX}%</strong></span>
-        <input id="tuner-offset-x" type="range" min="-35" max="35" step="1" value="${settings.offsetX}" />
-      </label>
-
-      <label class="tuner-field">
-        <span>Move up/down: <strong id="tuner-y-value">${settings.offsetY}%</strong></span>
-        <input id="tuner-offset-y" type="range" min="-35" max="35" step="1" value="${settings.offsetY}" />
-      </label>
-
-      <label class="tuner-field">
-        <span>Corner shape: <strong id="tuner-radius-value">${settings.radius}px</strong></span>
-        <input id="tuner-radius" type="range" min="10" max="30" step="1" value="${settings.radius}" />
-      </label>
-
-      <label class="tuner-field">
-        <span>Current values</span>
-        <textarea id="tuner-export" readonly>${exportLines}</textarea>
-      </label>
-    </div>
-  `;
-
-  bindAvatarTunerEvents();
-}
-
-function updateEntrantAvatar(name, updater) {
-  const entrant = getEntrantByName(name);
-  updater(entrant);
-  const leaderboard = computeLeaderboard();
-  renderLeaderboard(leaderboard);
-  renderAvatarTuner();
-}
-
-function bindAvatarTunerEvents() {
-  const entrantSelect = document.getElementById("tuner-entrant");
-  const scaleInput = document.getElementById("tuner-scale");
-  const offsetXInput = document.getElementById("tuner-offset-x");
-  const offsetYInput = document.getElementById("tuner-offset-y");
-  const radiusInput = document.getElementById("tuner-radius");
-
-  entrantSelect?.addEventListener("input", (event) => {
-    avatarTunerState.selectedEntrant = event.target.value;
-    renderAvatarTuner();
-  });
-
-  scaleInput?.addEventListener("input", (event) => {
-    updateEntrantAvatar(avatarTunerState.selectedEntrant, (entrant) => {
-      entrant.photoScale = Number.parseFloat(event.target.value);
-    });
-  });
-
-  offsetXInput?.addEventListener("input", (event) => {
-    updateEntrantAvatar(avatarTunerState.selectedEntrant, (entrant) => {
-      entrant.photoOffsetX = `${event.target.value}%`;
-    });
-  });
-
-  offsetYInput?.addEventListener("input", (event) => {
-    updateEntrantAvatar(avatarTunerState.selectedEntrant, (entrant) => {
-      entrant.photoOffsetY = `${event.target.value}%`;
-    });
-  });
-
-  radiusInput?.addEventListener("input", (event) => {
-    updateEntrantAvatar(avatarTunerState.selectedEntrant, (entrant) => {
-      entrant.photoRadius = `${event.target.value}px`;
-    });
-  });
-}
-
 function renderMeta() {
   document.getElementById("last-updated").textContent = `Updated ${formatDate(sweepstakeData.updatedAt)}`;
 }
@@ -600,7 +462,6 @@ function init() {
   renderPotLeaders(leaderboard);
   renderFixtures();
   renderScoringTable();
-  renderAvatarTuner();
 }
 
 init();
