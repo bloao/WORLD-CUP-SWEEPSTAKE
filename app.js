@@ -8,15 +8,15 @@ const sweepstakeData = {
     "Pot E": { first: 6, second: 3, ro32: 6, ro16: 6, qf: 5, sf: 8, third: 9, runnerUp: 10, winner: 30 },
   },
   entrants: [
-    { name: "bloao", photoUrl: "", picks: { "Pot A": "Spain", "Pot B": "Germany", "Pot C": "Norway", "Pot D": "Panama", "Pot E": "South Africa" } },
-    { name: "breamy", photoUrl: "", picks: { "Pot A": "Netherlands", "Pot B": "United States", "Pot C": "Egypt", "Pot D": "Côte d’Ivoire", "Pot E": "Bosnia and Herzegovina" } },
-    { name: "mitch", photoUrl: "", picks: { "Pot A": "Portugal", "Pot B": "Mexico", "Pot C": "Canada", "Pot D": "Paraguay", "Pot E": "Uzbekistan" } },
-    { name: "silk", photoUrl: "", picks: { "Pot A": "Belgium", "Pot B": "Switzerland", "Pot C": "Austria", "Pot D": "Tunisia", "Pot E": "Cabo Verde" } },
-    { name: "lick", photoUrl: "", picks: { "Pot A": "Argentina", "Pot B": "Senegal", "Pot C": "Iran", "Pot D": "DR Congo", "Pot E": "Haiti" } },
-    { name: "rat", photoUrl: "", picks: { "Pot A": "Brazil", "Pot B": "Croatia", "Pot C": "Ecuador", "Pot D": "Türkiye", "Pot E": "Curaçao" } },
-    { name: "oja", photoUrl: "", picks: { "Pot A": "England", "Pot B": "Japan", "Pot C": "South Korea", "Pot D": "Czech Republic", "Pot E": "New Zealand" } },
-    { name: "bill", photoUrl: "", picks: { "Pot A": "Morocco", "Pot B": "Uruguay", "Pot C": "Algeria", "Pot D": "Scotland", "Pot E": "Ghana" } },
-    { name: "gash", photoUrl: "", picks: { "Pot A": "France", "Pot B": "Colombia", "Pot C": "Australia", "Pot D": "Qatar", "Pot E": "Saudi Arabia" } },
+    { name: "bloao", photoUrl: "./bloaopfp.JPG", photoPosition: "50% 44%", picks: { "Pot A": "Spain", "Pot B": "Germany", "Pot C": "Norway", "Pot D": "Panama", "Pot E": "South Africa" } },
+    { name: "breamy", photoUrl: "./breamypfp.jpg", photoPosition: "50% 56%", picks: { "Pot A": "Netherlands", "Pot B": "United States", "Pot C": "Egypt", "Pot D": "Côte d’Ivoire", "Pot E": "Bosnia and Herzegovina" } },
+    { name: "mitch", photoUrl: "./mitchpfp.jpg", photoPosition: "50% 50%", picks: { "Pot A": "Portugal", "Pot B": "Mexico", "Pot C": "Canada", "Pot D": "Paraguay", "Pot E": "Uzbekistan" } },
+    { name: "silk", photoUrl: "./silkpfp.jpg", photoPosition: "50% 50%", picks: { "Pot A": "Belgium", "Pot B": "Switzerland", "Pot C": "Austria", "Pot D": "Tunisia", "Pot E": "Cabo Verde" } },
+    { name: "lick", photoUrl: "./lickpfp.jpg", photoPosition: "62% 60%", picks: { "Pot A": "Argentina", "Pot B": "Senegal", "Pot C": "Iran", "Pot D": "DR Congo", "Pot E": "Haiti" } },
+    { name: "rat", photoUrl: "./ratpfp.JPG", photoPosition: "50% 50%", picks: { "Pot A": "Brazil", "Pot B": "Croatia", "Pot C": "Ecuador", "Pot D": "Türkiye", "Pot E": "Curaçao" } },
+    { name: "oja", photoUrl: "./ojapfp.jpg", photoPosition: "50% 56%", picks: { "Pot A": "England", "Pot B": "Japan", "Pot C": "South Korea", "Pot D": "Czech Republic", "Pot E": "New Zealand" } },
+    { name: "bill", photoUrl: "./billpfp.jpg", photoPosition: "50% 50%", picks: { "Pot A": "Morocco", "Pot B": "Uruguay", "Pot C": "Algeria", "Pot D": "Scotland", "Pot E": "Ghana" } },
+    { name: "gash", photoUrl: "./gashpfp.JPG", photoPosition: "50% 68%", picks: { "Pot A": "France", "Pot B": "Colombia", "Pot C": "Australia", "Pot D": "Qatar", "Pot E": "Saudi Arabia" } },
   ],
   teamResults: {
     Spain: {},
@@ -105,6 +105,18 @@ function initialsFor(name) {
   return name.slice(0, 2).toUpperCase();
 }
 
+function avatarImageMarkup(entrant) {
+  if (!entrant.photoUrl) {
+    return `<span>${initialsFor(entrant.name)}</span>`;
+  }
+
+  const style = entrant.photoPosition
+    ? ` style="object-position: ${entrant.photoPosition};"`
+    : "";
+
+  return `<img src="${entrant.photoUrl}" alt="${entrant.name}"${style} />`;
+}
+
 function buildTeamPotLookup() {
   const teamPot = new Map();
   sweepstakeData.entrants.forEach((entrant) => {
@@ -180,9 +192,7 @@ function renderLeaderboard(leaderboard) {
           <div class="rank-chip">${index + 1}</div>
           <div class="avatar ${entrant.photoUrl ? "has-photo" : ""}">
             ${
-              entrant.photoUrl
-                ? `<img src="${entrant.photoUrl}" alt="${entrant.name}" />`
-                : `<span>${initialsFor(entrant.name)}</span>`
+              avatarImageMarkup(entrant)
             }
           </div>
           <div class="leader-main">
@@ -244,9 +254,7 @@ function renderEntrants(leaderboard) {
           <div class="entrant-head">
             <div class="avatar ${entrant.photoUrl ? "has-photo" : ""}">
               ${
-                entrant.photoUrl
-                  ? `<img src="${entrant.photoUrl}" alt="${entrant.name}" />`
-                  : `<span>${initialsFor(entrant.name)}</span>`
+                avatarImageMarkup(entrant)
               }
             </div>
             <div>
