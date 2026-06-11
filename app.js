@@ -253,6 +253,13 @@ function renderHeroSummary(leaderboard) {
   const leaderNames = leaders.map((entrant) => entrant.name);
   const leaderLabel = leaderNames.length === 0 ? "N/A" : leaderNames.map(displayName).join(", ");
   const leaderPointsLabel = leaderNames.length === 0 ? "No points yet" : `${topScore} pts`;
+  const contestantMarkup = sweepstakeData.entrants
+    .map((entrant) => `
+      <div class="contestant-avatar avatar ${entrant.photoUrl ? "has-photo" : ""}">
+        ${avatarImageMarkup(entrant)}
+      </div>
+    `)
+    .join("");
   const summary = document.getElementById("hero-summary");
   summary.innerHTML = `
     <div class="summary-card accent">
@@ -263,6 +270,8 @@ function renderHeroSummary(leaderboard) {
     <div class="summary-card">
       <span>Fixture clashes</span>
       <strong>${countConflicts()}</strong>
+      <small>Contestants</small>
+      <div class="contestant-row">${contestantMarkup}</div>
     </div>
   `;
 }
