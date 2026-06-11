@@ -1,3 +1,77 @@
+const worldCupFixtures = [
+  { kickoffUtc: "2026-06-11T19:00:00Z", match: "Mexico vs South Africa", team1: "Mexico", team2: "South Africa" },
+  { kickoffUtc: "2026-06-12T02:00:00Z", match: "South Korea vs Czech Republic", team1: "South Korea", team2: "Czech Republic" },
+  { kickoffUtc: "2026-06-13T01:00:00Z", match: "United States vs Paraguay", team1: "United States", team2: "Paraguay" },
+  { kickoffUtc: "2026-06-13T19:00:00Z", match: "Qatar vs Switzerland", team1: "Qatar", team2: "Switzerland" },
+  { kickoffUtc: "2026-06-13T22:00:00Z", match: "Brazil vs Morocco", team1: "Brazil", team2: "Morocco" },
+  { kickoffUtc: "2026-06-14T01:00:00Z", match: "Haiti vs Scotland", team1: "Haiti", team2: "Scotland" },
+  { kickoffUtc: "2026-06-14T04:00:00Z", match: "Australia vs Türkiye", team1: "Australia", team2: "Türkiye" },
+  { kickoffUtc: "2026-06-14T17:00:00Z", match: "Germany vs Curaçao", team1: "Germany", team2: "Curaçao" },
+  { kickoffUtc: "2026-06-14T20:00:00Z", match: "Netherlands vs Japan", team1: "Netherlands", team2: "Japan" },
+  { kickoffUtc: "2026-06-14T23:00:00Z", match: "Côte d’Ivoire vs Ecuador", team1: "Côte d’Ivoire", team2: "Ecuador" },
+  { kickoffUtc: "2026-06-15T02:00:00Z", match: "Sweden vs Tunisia", team1: "Sweden", team2: "Tunisia" },
+  { kickoffUtc: "2026-06-15T16:00:00Z", match: "Spain vs Cabo Verde", team1: "Spain", team2: "Cabo Verde" },
+  { kickoffUtc: "2026-06-15T19:00:00Z", match: "Belgium vs Egypt", team1: "Belgium", team2: "Egypt" },
+  { kickoffUtc: "2026-06-15T22:00:00Z", match: "Saudi Arabia vs Uruguay", team1: "Saudi Arabia", team2: "Uruguay" },
+  { kickoffUtc: "2026-06-16T01:00:00Z", match: "Iran vs New Zealand", team1: "Iran", team2: "New Zealand" },
+  { kickoffUtc: "2026-06-16T19:00:00Z", match: "France vs Senegal", team1: "France", team2: "Senegal" },
+  { kickoffUtc: "2026-06-16T22:00:00Z", match: "Iraq vs Norway", team1: "Iraq", team2: "Norway" },
+  { kickoffUtc: "2026-06-17T01:00:00Z", match: "Argentina vs Algeria", team1: "Argentina", team2: "Algeria" },
+  { kickoffUtc: "2026-06-17T04:00:00Z", match: "Austria vs Jordan", team1: "Austria", team2: "Jordan" },
+  { kickoffUtc: "2026-06-17T17:00:00Z", match: "Portugal vs DR Congo", team1: "Portugal", team2: "DR Congo" },
+  { kickoffUtc: "2026-06-17T20:00:00Z", match: "England vs Croatia", team1: "England", team2: "Croatia" },
+  { kickoffUtc: "2026-06-17T23:00:00Z", match: "Ghana vs Panama", team1: "Ghana", team2: "Panama" },
+  { kickoffUtc: "2026-06-18T02:00:00Z", match: "Uzbekistan vs Colombia", team1: "Uzbekistan", team2: "Colombia" },
+  { kickoffUtc: "2026-06-18T16:00:00Z", match: "Czech Republic vs South Africa", team1: "Czech Republic", team2: "South Africa" },
+  { kickoffUtc: "2026-06-18T19:00:00Z", match: "Switzerland vs Bosnia and Herzegovina", team1: "Switzerland", team2: "Bosnia and Herzegovina" },
+  { kickoffUtc: "2026-06-18T22:00:00Z", match: "Canada vs Qatar", team1: "Canada", team2: "Qatar" },
+  { kickoffUtc: "2026-06-19T01:00:00Z", match: "Mexico vs South Korea", team1: "Mexico", team2: "South Korea" },
+  { kickoffUtc: "2026-06-19T19:00:00Z", match: "United States vs Australia", team1: "United States", team2: "Australia" },
+  { kickoffUtc: "2026-06-19T22:00:00Z", match: "Scotland vs Morocco", team1: "Scotland", team2: "Morocco" },
+  { kickoffUtc: "2026-06-20T00:30:00Z", match: "Brazil vs Haiti", team1: "Brazil", team2: "Haiti" },
+  { kickoffUtc: "2026-06-20T03:00:00Z", match: "Türkiye vs Paraguay", team1: "Türkiye", team2: "Paraguay" },
+  { kickoffUtc: "2026-06-20T17:00:00Z", match: "Netherlands vs Sweden", team1: "Netherlands", team2: "Sweden" },
+  { kickoffUtc: "2026-06-20T20:00:00Z", match: "Germany vs Côte d’Ivoire", team1: "Germany", team2: "Côte d’Ivoire" },
+  { kickoffUtc: "2026-06-21T00:00:00Z", match: "Ecuador vs Curaçao", team1: "Ecuador", team2: "Curaçao" },
+  { kickoffUtc: "2026-06-21T04:00:00Z", match: "Tunisia vs Japan", team1: "Tunisia", team2: "Japan" },
+  { kickoffUtc: "2026-06-21T16:00:00Z", match: "Spain vs Saudi Arabia", team1: "Spain", team2: "Saudi Arabia" },
+  { kickoffUtc: "2026-06-21T19:00:00Z", match: "Belgium vs Iran", team1: "Belgium", team2: "Iran" },
+  { kickoffUtc: "2026-06-21T22:00:00Z", match: "Uruguay vs Cabo Verde", team1: "Uruguay", team2: "Cabo Verde" },
+  { kickoffUtc: "2026-06-22T01:00:00Z", match: "New Zealand vs Egypt", team1: "New Zealand", team2: "Egypt" },
+  { kickoffUtc: "2026-06-22T17:00:00Z", match: "Argentina vs Austria", team1: "Argentina", team2: "Austria" },
+  { kickoffUtc: "2026-06-22T21:00:00Z", match: "France vs Iraq", team1: "France", team2: "Iraq" },
+  { kickoffUtc: "2026-06-23T00:00:00Z", match: "Norway vs Senegal", team1: "Norway", team2: "Senegal" },
+  { kickoffUtc: "2026-06-23T03:00:00Z", match: "Jordan vs Algeria", team1: "Jordan", team2: "Algeria" },
+  { kickoffUtc: "2026-06-23T17:00:00Z", match: "Portugal vs Uzbekistan", team1: "Portugal", team2: "Uzbekistan" },
+  { kickoffUtc: "2026-06-23T20:00:00Z", match: "England vs Ghana", team1: "England", team2: "Ghana" },
+  { kickoffUtc: "2026-06-23T23:00:00Z", match: "Panama vs Croatia", team1: "Panama", team2: "Croatia" },
+  { kickoffUtc: "2026-06-24T02:00:00Z", match: "Colombia vs DR Congo", team1: "Colombia", team2: "DR Congo" },
+  { kickoffUtc: "2026-06-24T19:00:00Z", match: "Bosnia and Herzegovina vs Qatar", team1: "Bosnia and Herzegovina", team2: "Qatar" },
+  { kickoffUtc: "2026-06-24T19:00:00Z", match: "Switzerland vs Canada", team1: "Switzerland", team2: "Canada" },
+  { kickoffUtc: "2026-06-24T22:00:00Z", match: "Morocco vs Haiti", team1: "Morocco", team2: "Haiti" },
+  { kickoffUtc: "2026-06-24T22:00:00Z", match: "Scotland vs Brazil", team1: "Scotland", team2: "Brazil" },
+  { kickoffUtc: "2026-06-25T01:00:00Z", match: "Czech Republic vs Mexico", team1: "Czech Republic", team2: "Mexico" },
+  { kickoffUtc: "2026-06-25T01:00:00Z", match: "South Africa vs South Korea", team1: "South Africa", team2: "South Korea" },
+  { kickoffUtc: "2026-06-25T20:00:00Z", match: "Curaçao vs Côte d’Ivoire", team1: "Curaçao", team2: "Côte d’Ivoire" },
+  { kickoffUtc: "2026-06-25T20:00:00Z", match: "Ecuador vs Germany", team1: "Ecuador", team2: "Germany" },
+  { kickoffUtc: "2026-06-25T23:00:00Z", match: "Japan vs Sweden", team1: "Japan", team2: "Sweden" },
+  { kickoffUtc: "2026-06-25T23:00:00Z", match: "Tunisia vs Netherlands", team1: "Tunisia", team2: "Netherlands" },
+  { kickoffUtc: "2026-06-26T02:00:00Z", match: "Paraguay vs Australia", team1: "Paraguay", team2: "Australia" },
+  { kickoffUtc: "2026-06-26T02:00:00Z", match: "Türkiye vs United States", team1: "Türkiye", team2: "United States" },
+  { kickoffUtc: "2026-06-26T19:00:00Z", match: "Norway vs France", team1: "Norway", team2: "France" },
+  { kickoffUtc: "2026-06-26T19:00:00Z", match: "Senegal vs Iraq", team1: "Senegal", team2: "Iraq" },
+  { kickoffUtc: "2026-06-27T00:00:00Z", match: "Cabo Verde vs Saudi Arabia", team1: "Cabo Verde", team2: "Saudi Arabia" },
+  { kickoffUtc: "2026-06-27T00:00:00Z", match: "Uruguay vs Spain", team1: "Uruguay", team2: "Spain" },
+  { kickoffUtc: "2026-06-27T03:00:00Z", match: "Egypt vs Iran", team1: "Egypt", team2: "Iran" },
+  { kickoffUtc: "2026-06-27T03:00:00Z", match: "New Zealand vs Belgium", team1: "New Zealand", team2: "Belgium" },
+  { kickoffUtc: "2026-06-27T21:00:00Z", match: "Croatia vs Ghana", team1: "Croatia", team2: "Ghana" },
+  { kickoffUtc: "2026-06-27T21:00:00Z", match: "Panama vs England", team1: "Panama", team2: "England" },
+  { kickoffUtc: "2026-06-27T23:30:00Z", match: "Colombia vs Portugal", team1: "Colombia", team2: "Portugal" },
+  { kickoffUtc: "2026-06-27T23:30:00Z", match: "DR Congo vs Uzbekistan", team1: "DR Congo", team2: "Uzbekistan" },
+  { kickoffUtc: "2026-06-28T02:00:00Z", match: "Algeria vs Austria", team1: "Algeria", team2: "Austria" },
+  { kickoffUtc: "2026-06-28T02:00:00Z", match: "Jordan vs Argentina", team1: "Jordan", team2: "Argentina" },
+];
+
 const sweepstakeData = {
   updatedAt: "2026-06-11",
   scoring: {
@@ -65,14 +139,7 @@ const sweepstakeData = {
     Qatar: {},
     "Saudi Arabia": {},
   },
-  fixtures: [
-    { date: "2026-06-14", time: "17:00", match: "Spain vs Germany", team1: "Spain", team2: "Germany" },
-    { date: "2026-06-14", time: "17:00", match: "Argentina vs Brazil", team1: "Argentina", team2: "Brazil" },
-    { date: "2026-06-15", time: "20:00", match: "England vs Japan", team1: "England", team2: "Japan" },
-    { date: "2026-06-16", time: "20:00", match: "France vs Colombia", team1: "France", team2: "Colombia" },
-    { date: "2026-06-16", time: "20:00", match: "Portugal vs Mexico", team1: "Portugal", team2: "Mexico" },
-    { date: "2026-06-18", time: "14:00", match: "Morocco vs Uruguay", team1: "Morocco", team2: "Uruguay" },
-  ],
+  fixtures: worldCupFixtures,
 };
 
 const scoringOrder = [
@@ -99,6 +166,22 @@ function formatDate(value) {
     month: "short",
     year: "numeric",
   }).format(date);
+}
+
+function formatKickoff(value) {
+  const date = new Date(value);
+  return {
+    date: new Intl.DateTimeFormat("en-GB", {
+      weekday: "short",
+      day: "numeric",
+      month: "short",
+    }).format(date),
+    time: new Intl.DateTimeFormat("en-GB", {
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: false,
+    }).format(date),
+  };
 }
 
 function initialsFor(name) {
@@ -133,6 +216,18 @@ function scoreTeam(team, pot) {
   }, 0);
 }
 
+function getLeadersForValue(items, valueGetter) {
+  const topScore = Math.max(...items.map(valueGetter), 0);
+  if (topScore <= 0) {
+    return { topScore, leaders: [] };
+  }
+
+  return {
+    topScore,
+    leaders: items.filter((item) => valueGetter(item) === topScore),
+  };
+}
+
 function computeLeaderboard() {
   return sweepstakeData.entrants
     .map((entrant) => {
@@ -148,12 +243,10 @@ function computeLeaderboard() {
 }
 
 function renderHeroSummary(leaderboard) {
-  const topScore = leaderboard[0]?.total ?? 0;
-  const leaders = topScore > 0
-    ? leaderboard.filter((entrant) => entrant.total === topScore).map((entrant) => entrant.name)
-    : [];
-  const leaderLabel = leaders.length === 0 ? "N/A" : leaders.join(", ");
-  const leaderPointsLabel = leaders.length === 0 ? "No points yet" : `${topScore} pts`;
+  const { topScore, leaders } = getLeadersForValue(leaderboard, (entrant) => entrant.total);
+  const leaderNames = leaders.map((entrant) => entrant.name);
+  const leaderLabel = leaderNames.length === 0 ? "N/A" : leaderNames.join(", ");
+  const leaderPointsLabel = leaderNames.length === 0 ? "No points yet" : `${topScore} pts`;
   const summary = document.getElementById("hero-summary");
   summary.innerHTML = `
     <div class="summary-card accent">
@@ -209,13 +302,16 @@ function renderLeaderboard(leaderboard) {
 function renderPotLeaders(leaderboard) {
   const container = document.getElementById("pot-leaders");
   const winnersByPot = ["Pot A", "Pot B", "Pot C", "Pot D", "Pot E"].map((pot) => {
-    const best = [...leaderboard].sort((a, b) => {
-      const aPoints = a.breakdown.find((entry) => entry.pot === pot).points;
-      const bPoints = b.breakdown.find((entry) => entry.pot === pot).points;
-      return bPoints - aPoints || a.name.localeCompare(b.name);
-    })[0];
-    const pick = best.breakdown.find((entry) => entry.pot === pot);
-    return { pot, name: best.name, team: pick.team, points: pick.points };
+    const { topScore, leaders } = getLeadersForValue(leaderboard, (entrant) => {
+      return entrant.breakdown.find((entry) => entry.pot === pot).points;
+    });
+    const teams = leaders.map((entrant) => entrant.breakdown.find((entry) => entry.pot === pot).team);
+    return {
+      pot,
+      name: leaders.length === 0 ? "N/A" : leaders.map((entrant) => entrant.name).join(", "),
+      team: leaders.length === 0 ? "No points yet" : teams.join(", "),
+      points: leaders.length === 0 ? "No points yet" : `${topScore} pts`,
+    };
   });
 
   container.innerHTML = winnersByPot
@@ -225,82 +321,87 @@ function renderPotLeaders(leaderboard) {
           <span>${row.pot}</span>
           <strong>${row.name}</strong>
           <small>${row.team}</small>
-          <em>${row.points} pts</em>
+          <em>${row.points}</em>
         </div>
       `
     )
     .join("");
 }
 
-function renderEntrants(leaderboard) {
-  const container = document.getElementById("entrant-cards");
-  container.innerHTML = leaderboard
-    .map((entrant) => {
-      const picks = Object.entries(entrant.picks)
-        .map(
-          ([pot, team]) => `
-            <div class="tag-row">
-              <span>${pot}</span>
-              <strong>${team}</strong>
-            </div>
-          `
-        )
-        .join("");
+function buildConflictGroups() {
+  const teamOwners = new Map();
+  sweepstakeData.entrants.forEach((entrant) => {
+    Object.values(entrant.picks).forEach((team) => {
+      teamOwners.set(team, [...(teamOwners.get(team) || []), entrant.name]);
+    });
+  });
 
-      return `
-        <article class="entrant-card">
-          <div class="entrant-head">
-            <div class="avatar ${entrant.photoUrl ? "has-photo" : ""}">
-              ${
-                avatarImageMarkup(entrant)
-              }
-            </div>
-            <div>
-              <h3>${entrant.name}</h3>
-              <p>${entrant.total} pts total</p>
-            </div>
-          </div>
-          <div class="entrant-picks">${picks}</div>
-        </article>
-      `;
+  const grouped = new Map();
+  sweepstakeData.fixtures.forEach((fixture) => {
+    const entrants = [...new Set([
+      ...(teamOwners.get(fixture.team1) || []),
+      ...(teamOwners.get(fixture.team2) || []),
+    ])];
+    const group = grouped.get(fixture.kickoffUtc) || [];
+    group.push({ ...fixture, entrants });
+    grouped.set(fixture.kickoffUtc, group);
+  });
+
+  return [...grouped.entries()]
+    .sort((a, b) => a[0].localeCompare(b[0]))
+    .map(([kickoffUtc, fixtures]) => {
+      const entrants = [...new Set(fixtures.flatMap((fixture) => fixture.entrants))].sort();
+      return { kickoffUtc, fixtures, entrants };
     })
-    .join("");
+    .filter((group) => group.fixtures.length > 1 && group.entrants.length > 1);
 }
 
 function countConflicts() {
-  const map = new Map();
-  sweepstakeData.fixtures.forEach((fixture) => {
-    const key = `${fixture.date}_${fixture.time}`;
-    map.set(key, (map.get(key) || 0) + 1);
-  });
-  return [...map.values()].filter((count) => count > 1).reduce((sum, value) => sum + value, 0);
+  return buildConflictGroups().length;
 }
 
 function renderFixtures() {
-  const counts = new Map();
-  sweepstakeData.fixtures.forEach((fixture) => {
-    const key = `${fixture.date}_${fixture.time}`;
-    counts.set(key, (counts.get(key) || 0) + 1);
-  });
-
+  const conflicts = buildConflictGroups();
   const container = document.getElementById("fixture-list");
-  container.innerHTML = sweepstakeData.fixtures
-    .map((fixture) => {
-      const key = `${fixture.date}_${fixture.time}`;
-      const hasConflict = counts.get(key) > 1;
+
+  if (conflicts.length === 0) {
+    container.innerHTML = `
+      <article class="fixture-row">
+        <div class="fixture-main">
+          <h3>No clashes yet</h3>
+          <p>No overlapping kickoff slots involve different people.</p>
+        </div>
+      </article>
+    `;
+    return;
+  }
+
+  container.innerHTML = conflicts
+    .map((group) => {
+      const kickoff = formatKickoff(group.kickoffUtc);
+      const games = group.fixtures
+        .map((fixture) => `
+          <div class="fixture-game">
+            <strong>${fixture.match}</strong>
+            <small>${fixture.entrants.join(", ") || "No sweepstake team involved"}</small>
+          </div>
+        `)
+        .join("");
+
       return `
-        <article class="fixture-row ${hasConflict ? "conflict" : ""}">
-          <div>
-            <p>${formatDate(fixture.date)}</p>
-            <strong>${fixture.time}</strong>
+        <article class="fixture-row conflict">
+          <div class="fixture-slot">
+            <div>
+              <p>${kickoff.date}</p>
+              <strong>${kickoff.time}</strong>
+            </div>
+            <div class="fixture-flag">Clash</div>
           </div>
           <div class="fixture-main">
-            <h3>${fixture.match}</h3>
-            <p>${fixture.team1} vs ${fixture.team2}</p>
+            <h3>${group.entrants.join(", ")}</h3>
+            <p>${group.fixtures.length} games at the same kickoff</p>
           </div>
-          <div class="fixture-flag">
-            ${hasConflict ? "Conflict" : "Clear"}
-          </div>
+          <div class="fixture-games">${games}</div>
         </article>
       `;
     })
@@ -335,7 +436,6 @@ function init() {
   renderHeroSummary(leaderboard);
   renderLeaderboard(leaderboard);
   renderPotLeaders(leaderboard);
-  renderEntrants(leaderboard);
   renderFixtures();
   renderScoringTable();
 }

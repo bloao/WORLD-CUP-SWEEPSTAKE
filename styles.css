@@ -58,8 +58,7 @@ img {
 .summary-card span,
 .mini-card span,
 .fixture-flag,
-.pick-breakdown span,
-.tag-row span {
+.pick-breakdown span {
   font-family: "Space Mono", monospace;
 }
 
@@ -150,7 +149,6 @@ img {
 }
 
 .leaderboard-panel,
-.picks-panel,
 .scoring-panel {
   grid-column: 1 / 2;
 }
@@ -161,7 +159,6 @@ img {
 }
 
 .leaderboard-list,
-.cards-grid,
 .fixture-list,
 .mini-grid {
   display: grid;
@@ -226,13 +223,11 @@ img {
 }
 
 .leader-head h3,
-.entrant-head h3,
 .fixture-main h3 {
   margin: 0;
 }
 
 .leader-head p,
-.entrant-head p,
 .fixture-main p {
   margin: 0;
   color: var(--muted);
@@ -283,42 +278,9 @@ img {
   font-weight: 700;
 }
 
-.cards-grid {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.entrant-card {
-  padding: 18px;
-  border-radius: 22px;
-  background: rgba(255, 255, 255, 0.7);
-  border: 1px solid var(--line);
-}
-
-.entrant-head {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  margin-bottom: 16px;
-}
-
-.entrant-picks {
-  display: grid;
-  gap: 10px;
-}
-
-.tag-row {
-  display: flex;
-  justify-content: space-between;
-  gap: 16px;
-  padding-bottom: 10px;
-  border-bottom: 1px dashed rgba(28, 26, 23, 0.12);
-}
-
 .fixture-row {
   display: grid;
-  grid-template-columns: 110px 1fr auto;
   gap: 16px;
-  align-items: center;
   padding: 16px;
   border-radius: 20px;
   background: rgba(255, 255, 255, 0.76);
@@ -332,6 +294,34 @@ img {
 
 .fixture-row p {
   margin: 0 0 6px;
+  color: var(--muted);
+}
+
+.fixture-slot {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.fixture-games {
+  display: grid;
+  gap: 10px;
+}
+
+.fixture-game {
+  padding: 12px 14px;
+  border-radius: 16px;
+  background: rgba(159, 47, 47, 0.08);
+}
+
+.fixture-game strong,
+.fixture-game small {
+  display: block;
+}
+
+.fixture-game small {
+  margin-top: 4px;
   color: var(--muted);
 }
 
@@ -383,14 +373,12 @@ img {
   }
 
   .leaderboard-panel,
-  .picks-panel,
   .scoring-panel,
   .sidebar-panel,
   .fixtures-panel {
     grid-column: auto;
   }
 
-  .cards-grid,
   .mini-grid {
     grid-template-columns: 1fr;
   }
@@ -422,7 +410,7 @@ img {
   }
 
   .leader-head,
-  .tag-row,
+  .fixture-slot,
   .panel-heading {
     flex-direction: column;
     align-items: flex-start;
