@@ -8,7 +8,7 @@ const sweepstakeData = {
     "Pot E": { first: 6, second: 3, ro32: 6, ro16: 6, qf: 5, sf: 8, third: 9, runnerUp: 10, winner: 30 },
   },
   entrants: [
-    { name: "bloao", photoUrl: "./bloaopfp.JPG", photoPosition: "50% 8%", photoScale: 1.45, picks: { "Pot A": "Spain", "Pot B": "Germany", "Pot C": "Norway", "Pot D": "Panama", "Pot E": "South Africa" } },
+    { name: "bloao", photoUrl: "./bloaopfp.JPG", photoPosition: "50% 80%", photoScale: 1.45, picks: { "Pot A": "Spain", "Pot B": "Germany", "Pot C": "Norway", "Pot D": "Panama", "Pot E": "South Africa" } },
     { name: "breamy", photoUrl: "./breamypfp.jpg", photoPosition: "50% 64%", photoScale: 1.15, picks: { "Pot A": "Netherlands", "Pot B": "United States", "Pot C": "Egypt", "Pot D": "Côte d’Ivoire", "Pot E": "Bosnia and Herzegovina" } },
     { name: "mitch", photoUrl: "./mitchpfp.jpg", photoPosition: "50% 50%", photoScale: 1, picks: { "Pot A": "Portugal", "Pot B": "Mexico", "Pot C": "Canada", "Pot D": "Paraguay", "Pot E": "Uzbekistan" } },
     { name: "silk", photoUrl: "./silkpfp.jpg", photoPosition: "50% 50%", photoScale: 1, picks: { "Pot A": "Belgium", "Pot B": "Switzerland", "Pot C": "Austria", "Pot D": "Tunisia", "Pot E": "Cabo Verde" } },
