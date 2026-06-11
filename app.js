@@ -158,6 +158,10 @@ function titleCase(text) {
   return text.charAt(0).toUpperCase() + text.slice(1);
 }
 
+function displayName(name) {
+  return titleCase(name);
+}
+
 function formatDate(value) {
   const date = new Date(value);
   return new Intl.DateTimeFormat("en-GB", {
@@ -245,7 +249,7 @@ function computeLeaderboard() {
 function renderHeroSummary(leaderboard) {
   const { topScore, leaders } = getLeadersForValue(leaderboard, (entrant) => entrant.total);
   const leaderNames = leaders.map((entrant) => entrant.name);
-  const leaderLabel = leaderNames.length === 0 ? "N/A" : leaderNames.join(", ");
+  const leaderLabel = leaderNames.length === 0 ? "N/A" : leaderNames.map(displayName).join(", ");
   const leaderPointsLabel = leaderNames.length === 0 ? "No points yet" : `${topScore} pts`;
   const summary = document.getElementById("hero-summary");
   summary.innerHTML = `
@@ -288,7 +292,7 @@ function renderLeaderboard(leaderboard) {
           </div>
           <div class="leader-main">
             <div class="leader-head">
-              <h3>${entrant.name}</h3>
+              <h3>${displayName(entrant.name)}</h3>
               <p>${entrant.total} points</p>
             </div>
             <ul class="pick-breakdown">${picksMarkup}</ul>
@@ -308,7 +312,7 @@ function renderPotLeaders(leaderboard) {
     const teams = leaders.map((entrant) => entrant.breakdown.find((entry) => entry.pot === pot).team);
     return {
       pot,
-      name: leaders.length === 0 ? "N/A" : leaders.map((entrant) => entrant.name).join(", "),
+      name: leaders.length === 0 ? "N/A" : leaders.map((entrant) => displayName(entrant.name)).join(", "),
       team: leaders.length === 0 ? "No points yet" : teams.join(", "),
       points: leaders.length === 0 ? "No points yet" : `${topScore} pts`,
     };
@@ -383,7 +387,7 @@ function renderFixtures() {
         .map((fixture) => `
           <div class="fixture-game">
             <strong>${fixture.match}</strong>
-            <small>${fixture.entrants.join(", ") || "No sweepstake team involved"}</small>
+            <small>${fixture.entrants.map(displayName).join(", ") || "No sweepstake team involved"}</small>
           </div>
         `)
         .join("");
@@ -398,7 +402,7 @@ function renderFixtures() {
             <div class="fixture-flag">Clash</div>
           </div>
           <div class="fixture-main">
-            <h3>${group.entrants.join(", ")}</h3>
+            <h3>${group.entrants.map(displayName).join(", ")}</h3>
             <p>${group.fixtures.length} games at the same kickoff</p>
           </div>
           <div class="fixture-games">${games}</div>
