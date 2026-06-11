@@ -288,7 +288,6 @@ function renderHeroSummary(leaderboard) {
     <div class="summary-card">
       <span>Fixture clashes</span>
       <strong>${countConflicts()}</strong>
-      <small>kickoff overlaps flagged below</small>
     </div>
   `;
 }
