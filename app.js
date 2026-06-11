@@ -148,18 +148,18 @@ function computeLeaderboard() {
 }
 
 function renderHeroSummary(leaderboard) {
-  const winner = leaderboard[0];
+  const topScore = leaderboard[0]?.total ?? 0;
+  const leaders = topScore > 0
+    ? leaderboard.filter((entrant) => entrant.total === topScore).map((entrant) => entrant.name)
+    : [];
+  const leaderLabel = leaders.length === 0 ? "N/A" : leaders.join(", ");
+  const leaderPointsLabel = leaders.length === 0 ? "No points yet" : `${topScore} pts`;
   const summary = document.getElementById("hero-summary");
   summary.innerHTML = `
     <div class="summary-card accent">
       <span>Current leader</span>
-      <strong>${winner.name}</strong>
-      <small>${winner.total} pts</small>
-    </div>
-    <div class="summary-card">
-      <span>Players</span>
-      <strong>${leaderboard.length}</strong>
-      <small>fully unqualified opinions included</small>
+      <strong>${leaderLabel}</strong>
+      <small>${leaderPointsLabel}</small>
     </div>
     <div class="summary-card">
       <span>Fixture clashes</span>
