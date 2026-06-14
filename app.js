@@ -154,6 +154,121 @@ const scoringOrder = [
   ["winner", "Winner"],
 ];
 
+const groupStandingsSnapshot = {
+  updatedAt: "2026-06-14T03:06:00Z",
+  sourceLabel: "SB Nation standings snapshot",
+  groups: [
+    {
+      name: "Group A",
+      teams: [
+        { team: "Mexico", played: 1, wins: 1, draws: 0, losses: 0, gf: 2, ga: 0, gd: 2, points: 3 },
+        { team: "South Korea", played: 1, wins: 1, draws: 0, losses: 0, gf: 2, ga: 1, gd: 1, points: 3 },
+        { team: "Czech Republic", played: 1, wins: 0, draws: 0, losses: 1, gf: 1, ga: 2, gd: -1, points: 0 },
+        { team: "South Africa", played: 1, wins: 0, draws: 0, losses: 1, gf: 0, ga: 2, gd: -2, points: 0 },
+      ],
+    },
+    {
+      name: "Group B",
+      teams: [
+        { team: "Canada", played: 1, wins: 0, draws: 1, losses: 0, gf: 1, ga: 1, gd: 0, points: 1 },
+        { team: "Bosnia and Herzegovina", played: 1, wins: 0, draws: 1, losses: 0, gf: 1, ga: 1, gd: 0, points: 1 },
+        { team: "Qatar", played: 1, wins: 0, draws: 1, losses: 0, gf: 1, ga: 1, gd: 0, points: 1 },
+        { team: "Switzerland", played: 1, wins: 0, draws: 1, losses: 0, gf: 1, ga: 1, gd: 0, points: 1 },
+      ],
+    },
+    {
+      name: "Group C",
+      teams: [
+        { team: "Scotland", played: 1, wins: 1, draws: 0, losses: 0, gf: 1, ga: 0, gd: 1, points: 3 },
+        { team: "Brazil", played: 1, wins: 0, draws: 1, losses: 0, gf: 1, ga: 1, gd: 0, points: 1 },
+        { team: "Morocco", played: 1, wins: 0, draws: 1, losses: 0, gf: 1, ga: 1, gd: 0, points: 1 },
+        { team: "Haiti", played: 1, wins: 0, draws: 0, losses: 1, gf: 0, ga: 1, gd: -1, points: 0 },
+      ],
+    },
+    {
+      name: "Group D",
+      teams: [
+        { team: "United States", played: 1, wins: 1, draws: 0, losses: 0, gf: 4, ga: 1, gd: 3, points: 3 },
+        { team: "Türkiye", played: 0, wins: 0, draws: 0, losses: 0, gf: 0, ga: 0, gd: 0, points: 0 },
+        { team: "Australia", played: 0, wins: 0, draws: 0, losses: 0, gf: 0, ga: 0, gd: 0, points: 0 },
+        { team: "Paraguay", played: 1, wins: 0, draws: 0, losses: 1, gf: 1, ga: 4, gd: -3, points: 0 },
+      ],
+    },
+    {
+      name: "Group E",
+      teams: [
+        { team: "Germany", played: 0, wins: 0, draws: 0, losses: 0, gf: 0, ga: 0, gd: 0, points: 0 },
+        { team: "Curaçao", played: 0, wins: 0, draws: 0, losses: 0, gf: 0, ga: 0, gd: 0, points: 0 },
+        { team: "Côte d’Ivoire", played: 0, wins: 0, draws: 0, losses: 0, gf: 0, ga: 0, gd: 0, points: 0 },
+        { team: "Ecuador", played: 0, wins: 0, draws: 0, losses: 0, gf: 0, ga: 0, gd: 0, points: 0 },
+      ],
+    },
+    {
+      name: "Group F",
+      teams: [
+        { team: "Netherlands", played: 0, wins: 0, draws: 0, losses: 0, gf: 0, ga: 0, gd: 0, points: 0 },
+        { team: "Japan", played: 0, wins: 0, draws: 0, losses: 0, gf: 0, ga: 0, gd: 0, points: 0 },
+        { team: "Sweden", played: 0, wins: 0, draws: 0, losses: 0, gf: 0, ga: 0, gd: 0, points: 0 },
+        { team: "Tunisia", played: 0, wins: 0, draws: 0, losses: 0, gf: 0, ga: 0, gd: 0, points: 0 },
+      ],
+    },
+    {
+      name: "Group G",
+      teams: [
+        { team: "Belgium", played: 0, wins: 0, draws: 0, losses: 0, gf: 0, ga: 0, gd: 0, points: 0 },
+        { team: "Egypt", played: 0, wins: 0, draws: 0, losses: 0, gf: 0, ga: 0, gd: 0, points: 0 },
+        { team: "Iran", played: 0, wins: 0, draws: 0, losses: 0, gf: 0, ga: 0, gd: 0, points: 0 },
+        { team: "New Zealand", played: 0, wins: 0, draws: 0, losses: 0, gf: 0, ga: 0, gd: 0, points: 0 },
+      ],
+    },
+    {
+      name: "Group H",
+      teams: [
+        { team: "Spain", played: 0, wins: 0, draws: 0, losses: 0, gf: 0, ga: 0, gd: 0, points: 0 },
+        { team: "Cabo Verde", played: 0, wins: 0, draws: 0, losses: 0, gf: 0, ga: 0, gd: 0, points: 0 },
+        { team: "Saudi Arabia", played: 0, wins: 0, draws: 0, losses: 0, gf: 0, ga: 0, gd: 0, points: 0 },
+        { team: "Uruguay", played: 0, wins: 0, draws: 0, losses: 0, gf: 0, ga: 0, gd: 0, points: 0 },
+      ],
+    },
+    {
+      name: "Group I",
+      teams: [
+        { team: "France", played: 0, wins: 0, draws: 0, losses: 0, gf: 0, ga: 0, gd: 0, points: 0 },
+        { team: "Senegal", played: 0, wins: 0, draws: 0, losses: 0, gf: 0, ga: 0, gd: 0, points: 0 },
+        { team: "Iraq", played: 0, wins: 0, draws: 0, losses: 0, gf: 0, ga: 0, gd: 0, points: 0 },
+        { team: "Norway", played: 0, wins: 0, draws: 0, losses: 0, gf: 0, ga: 0, gd: 0, points: 0 },
+      ],
+    },
+    {
+      name: "Group J",
+      teams: [
+        { team: "Argentina", played: 0, wins: 0, draws: 0, losses: 0, gf: 0, ga: 0, gd: 0, points: 0 },
+        { team: "Algeria", played: 0, wins: 0, draws: 0, losses: 0, gf: 0, ga: 0, gd: 0, points: 0 },
+        { team: "Austria", played: 0, wins: 0, draws: 0, losses: 0, gf: 0, ga: 0, gd: 0, points: 0 },
+        { team: "Jordan", played: 0, wins: 0, draws: 0, losses: 0, gf: 0, ga: 0, gd: 0, points: 0 },
+      ],
+    },
+    {
+      name: "Group K",
+      teams: [
+        { team: "Portugal", played: 0, wins: 0, draws: 0, losses: 0, gf: 0, ga: 0, gd: 0, points: 0 },
+        { team: "DR Congo", played: 0, wins: 0, draws: 0, losses: 0, gf: 0, ga: 0, gd: 0, points: 0 },
+        { team: "Uzbekistan", played: 0, wins: 0, draws: 0, losses: 0, gf: 0, ga: 0, gd: 0, points: 0 },
+        { team: "Colombia", played: 0, wins: 0, draws: 0, losses: 0, gf: 0, ga: 0, gd: 0, points: 0 },
+      ],
+    },
+    {
+      name: "Group L",
+      teams: [
+        { team: "England", played: 0, wins: 0, draws: 0, losses: 0, gf: 0, ga: 0, gd: 0, points: 0 },
+        { team: "Croatia", played: 0, wins: 0, draws: 0, losses: 0, gf: 0, ga: 0, gd: 0, points: 0 },
+        { team: "Ghana", played: 0, wins: 0, draws: 0, losses: 0, gf: 0, ga: 0, gd: 0, points: 0 },
+        { team: "Panama", played: 0, wins: 0, draws: 0, losses: 0, gf: 0, ga: 0, gd: 0, points: 0 },
+      ],
+    },
+  ],
+};
+
 function titleCase(text) {
   return text.charAt(0).toUpperCase() + text.slice(1);
 }
@@ -482,31 +597,55 @@ function renderMeta() {
   document.getElementById("last-updated").textContent = `Updated ${formatDate(sweepstakeData.updatedAt)}`;
 }
 
+function ownerForTeam(team) {
+  return sweepstakeData.entrants.find((entrant) => Object.values(entrant.picks).includes(team)) || null;
+}
+
+function ownerMarkup(team) {
+  const entrant = ownerForTeam(team);
+  if (!entrant) {
+    return `
+      <div class="table-row-owner">
+        <div class="avatar"><span>--</span></div>
+        <div>
+          <strong>Unpicked</strong>
+          <span>No sweepstake owner</span>
+        </div>
+      </div>
+    `;
+  }
+
+  return `
+    <div class="table-row-owner">
+      ${avatarShellMarkup(entrant)}
+      <div>
+        <strong>${displayName(entrant.name)}</strong>
+        <span>${team}</span>
+      </div>
+    </div>
+  `;
+}
+
 function renderGroupStageTables() {
   const container = document.getElementById("group-stage-tables");
-  const potOrder = ["Pot A", "Pot B", "Pot C", "Pot D", "Pot E"];
-  const rowsByPot = potOrder.map((pot) => {
-    const rows = sweepstakeData.entrants
-      .map((entrant) => ({
-        entrant,
-        team: entrant.picks[pot],
-      }))
-      .sort((a, b) => a.team.localeCompare(b.team));
-
-    const body = rows
+  const rowsByGroup = groupStandingsSnapshot.groups.map((group) => {
+    const body = group.teams
       .map(
-        ({ entrant, team }) => `
+        (row, index) => `
           <tr>
-            <td><strong>${team}</strong></td>
+            <td class="table-rank">${index + 1}</td>
             <td>
-              <div class="table-row-owner">
-                ${avatarShellMarkup(entrant)}
-                <div>
-                  <strong>${displayName(entrant.name)}</strong>
-                  <span>${pot}</span>
-                </div>
-              </div>
+              ${ownerMarkup(row.team)}
             </td>
+            <td><strong>${row.team}</strong></td>
+            <td>${row.played}</td>
+            <td>${row.wins}</td>
+            <td>${row.draws}</td>
+            <td>${row.losses}</td>
+            <td>${row.gf}</td>
+            <td>${row.ga}</td>
+            <td>${row.gd > 0 ? `+${row.gd}` : row.gd}</td>
+            <td class="table-points">${row.points}</td>
           </tr>
         `
       )
@@ -514,12 +653,21 @@ function renderGroupStageTables() {
 
     return `
       <article class="table-card">
-        <h3>${pot}</h3>
+        <h3>${group.name}</h3>
         <table>
           <thead>
             <tr>
-              <th>Team</th>
+              <th>#</th>
               <th>Owner</th>
+              <th>Team</th>
+              <th>P</th>
+              <th>W</th>
+              <th>D</th>
+              <th>L</th>
+              <th>GF</th>
+              <th>GA</th>
+              <th>GD</th>
+              <th>Pts</th>
             </tr>
           </thead>
           <tbody>${body}</tbody>
@@ -528,7 +676,8 @@ function renderGroupStageTables() {
     `;
   });
 
-  container.innerHTML = rowsByPot.join("");
+  container.innerHTML = rowsByGroup.join("");
+  document.getElementById("group-stage-note").textContent = `${groupStandingsSnapshot.sourceLabel} · ${formatDate(groupStandingsSnapshot.updatedAt)}`;
 }
 
 function setActiveView(view) {

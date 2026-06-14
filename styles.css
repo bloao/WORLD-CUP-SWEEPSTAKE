@@ -555,6 +555,7 @@ body.menu-open .drawer {
   border-radius: 22px;
   border: 1px solid var(--line);
   background: rgba(255, 255, 255, 0.72);
+  overflow-x: auto;
 }
 
 .table-card h3 {
@@ -565,6 +566,7 @@ body.menu-open .drawer {
 .table-card table {
   width: 100%;
   border-collapse: collapse;
+  min-width: 640px;
 }
 
 .table-card th,
@@ -600,6 +602,16 @@ body.menu-open .drawer {
 .table-row-owner span {
   color: var(--muted);
   font-size: 0.72rem;
+}
+
+.table-rank {
+  width: 42px;
+  text-align: center;
+  font-weight: 800;
+}
+
+.table-points {
+  font-weight: 800;
 }
 
 .single-view-shell {
