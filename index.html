@@ -13,64 +13,130 @@
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
+    <div class="menu-overlay" id="menu-overlay" hidden></div>
+    <aside class="drawer" id="nav-drawer" aria-hidden="true">
+      <div class="drawer-header">
+        <p class="section-kicker">Navigation</p>
+        <button class="drawer-close" id="drawer-close" type="button" aria-label="Close navigation menu">Close</button>
+      </div>
+      <nav class="drawer-nav" aria-label="Primary">
+        <button class="drawer-link active" data-view-target="home" data-device="all" type="button">Home</button>
+        <button class="drawer-link mobile-only" data-view-target="pot-winners" data-device="mobile" type="button">Pot winners</button>
+        <button class="drawer-link mobile-only" data-view-target="conflict-tracker" data-device="mobile" type="button">Conflict tracker</button>
+        <button class="drawer-link" data-view-target="group-stage-tables" data-device="all" type="button">Group stage tables</button>
+      </nav>
+    </aside>
+
     <div class="page-shell">
-      <header class="hero">
-        <div class="hero-copy">
-          <p class="eyebrow">World Cup Sweepstake</p>
-          <h1>Welcome to the boys World Cup 2026 sweepstake</h1>
-          <p class="intro">May the best man win £40</p>
-        </div>
-        <div class="hero-panel" id="hero-summary"></div>
-      </header>
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-drawer">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
 
-      <main class="layout">
-        <div class="column-stack main-column">
-          <section class="panel leaderboard-panel">
-            <div class="panel-heading">
-              <div>
-                <p class="section-kicker">Leaderboard</p>
-                <h2>Current table</h2>
+      <main class="view-stack">
+        <section class="view view-home active" data-view="home">
+          <header class="hero">
+            <div class="hero-copy">
+              <p class="eyebrow">World Cup Sweepstake</p>
+              <h1>Welcome to the boys World Cup 2026 sweepstake</h1>
+              <p class="intro">May the best man win £40</p>
+            </div>
+            <div class="hero-panel" id="hero-summary"></div>
+          </header>
+
+          <div class="layout">
+            <div class="column-stack main-column">
+              <section class="panel leaderboard-panel">
+                <div class="panel-heading">
+                  <div>
+                    <p class="section-kicker">Leaderboard</p>
+                    <h2>Current table</h2>
+                  </div>
+                  <p class="panel-note" id="last-updated"></p>
+                </div>
+                <div class="leaderboard-list" id="leaderboard-list"></div>
+              </section>
+
+              <section class="panel scoring-panel desktop-home-only">
+                <div class="panel-heading">
+                  <div>
+                    <p class="section-kicker">Scoring</p>
+                    <h2>How points are calculated</h2>
+                  </div>
+                </div>
+                <div class="scoring-table-wrap">
+                  <table class="scoring-table" id="scoring-table"></table>
+                </div>
+              </section>
+            </div>
+
+            <div class="column-stack side-column desktop-home-only">
+              <section class="panel sidebar-panel">
+                <div class="panel-heading">
+                  <div>
+                    <p class="section-kicker">Standings</p>
+                    <h2>Pot winners</h2>
+                  </div>
+                </div>
+                <div class="mini-grid" id="pot-leaders"></div>
+              </section>
+
+              <section class="panel fixtures-panel">
+                <div class="panel-heading">
+                  <div>
+                    <p class="section-kicker">Fixtures</p>
+                    <h2>Conflict tracker</h2>
+                  </div>
+                </div>
+                <div class="fixture-list" id="fixture-list"></div>
+              </section>
+            </div>
+          </div>
+        </section>
+
+        <section class="view" data-view="pot-winners">
+          <div class="single-view-shell">
+            <section class="panel">
+              <div class="panel-heading">
+                <div>
+                  <p class="section-kicker">Standings</p>
+                  <h2>Pot winners</h2>
+                </div>
               </div>
-              <p class="panel-note" id="last-updated"></p>
-            </div>
-            <div class="leaderboard-list" id="leaderboard-list"></div>
-          </section>
+              <div class="mini-grid" id="pot-leaders-mobile"></div>
+            </section>
+          </div>
+        </section>
 
-          <section class="panel scoring-panel">
-            <div class="panel-heading">
-              <div>
-                <p class="section-kicker">Scoring</p>
-                <h2>How points are calculated</h2>
+        <section class="view" data-view="conflict-tracker">
+          <div class="single-view-shell">
+            <section class="panel">
+              <div class="panel-heading">
+                <div>
+                  <p class="section-kicker">Fixtures</p>
+                  <h2>Conflict tracker</h2>
+                </div>
               </div>
-            </div>
-            <div class="scoring-table-wrap">
-              <table class="scoring-table" id="scoring-table"></table>
-            </div>
-          </section>
-        </div>
+              <div class="fixture-list" id="fixture-list-mobile"></div>
+            </section>
+          </div>
+        </section>
 
-        <div class="column-stack side-column">
-          <section class="panel sidebar-panel">
-            <div class="panel-heading">
-              <div>
-                <p class="section-kicker">Standings</p>
-                <h2>Pot winners</h2>
+        <section class="view" data-view="group-stage-tables">
+          <div class="single-view-shell">
+            <section class="panel">
+              <div class="panel-heading">
+                <div>
+                  <p class="section-kicker">Tables</p>
+                  <h2>Group stage tables</h2>
+                </div>
+                <p class="panel-note">Every picked team with the owner beside it</p>
               </div>
-            </div>
-            <div class="mini-grid" id="pot-leaders"></div>
-          </section>
-
-          <section class="panel fixtures-panel">
-            <div class="panel-heading">
-              <div>
-                <p class="section-kicker">Fixtures</p>
-                <h2>Conflict tracker</h2>
-              </div>
-            </div>
-            <div class="fixture-list" id="fixture-list"></div>
-          </section>
-
-        </div>
+              <div class="group-table-grid" id="group-stage-tables"></div>
+            </section>
+          </div>
+        </section>
       </main>
     </div>
 

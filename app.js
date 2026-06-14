@@ -204,14 +204,13 @@ function avatarImageMarkup(entrant) {
   return `<img src="${entrant.photoUrl}" alt="${entrant.name}"${style} />`;
 }
 
-function buildTeamPotLookup() {
-  const teamPot = new Map();
-  sweepstakeData.entrants.forEach((entrant) => {
-    Object.entries(entrant.picks).forEach(([pot, team]) => {
-      teamPot.set(team, pot);
-    });
-  });
-  return teamPot;
+function avatarShellMarkup(entrant, extraClass = "") {
+  const classes = ["avatar", entrant.photoUrl ? "has-photo" : "", extraClass].filter(Boolean).join(" ");
+  return `
+    <div class="${classes}">
+      ${avatarImageMarkup(entrant)}
+    </div>
+  `;
 }
 
 function scoreTeam(team, pot) {
@@ -316,7 +315,6 @@ function renderLeaderboard(leaderboard) {
 }
 
 function renderPotLeaders(leaderboard) {
-  const container = document.getElementById("pot-leaders");
   const winnersByPot = ["Pot A", "Pot B", "Pot C", "Pot D", "Pot E"].map((pot) => {
     const { topScore, leaders } = getLeadersForValue(leaderboard, (entrant) => {
       return entrant.breakdown.find((entry) => entry.pot === pot).points;
@@ -330,7 +328,7 @@ function renderPotLeaders(leaderboard) {
     };
   });
 
-  container.innerHTML = winnersByPot
+  const markup = winnersByPot
     .map(
       (row) => `
         <div class="mini-card">
@@ -342,6 +340,13 @@ function renderPotLeaders(leaderboard) {
       `
     )
     .join("");
+
+  ["pot-leaders", "pot-leaders-mobile"].forEach((id) => {
+    const container = document.getElementById(id);
+    if (container) {
+      container.innerHTML = markup;
+    }
+  });
 }
 
 function buildConflictGroups() {
@@ -384,10 +389,9 @@ function ownersForTeam(team) {
 
 function renderFixtures() {
   const conflicts = buildConflictGroups();
-  const container = document.getElementById("fixture-list");
 
   if (conflicts.length === 0) {
-    container.innerHTML = `
+    const emptyMarkup = `
       <article class="fixture-row">
         <div class="fixture-main">
           <h3>No clashes yet</h3>
@@ -395,10 +399,16 @@ function renderFixtures() {
         </div>
       </article>
     `;
+    ["fixture-list", "fixture-list-mobile"].forEach((id) => {
+      const container = document.getElementById(id);
+      if (container) {
+        container.innerHTML = emptyMarkup;
+      }
+    });
     return;
   }
 
-  container.innerHTML = conflicts
+  const markup = conflicts
     .map((group) => {
       const kickoff = formatKickoff(group.kickoffUtc);
       const games = group.fixtures
@@ -441,6 +451,13 @@ function renderFixtures() {
       `;
     })
     .join("");
+
+  ["fixture-list", "fixture-list-mobile"].forEach((id) => {
+    const container = document.getElementById(id);
+    if (container) {
+      container.innerHTML = markup;
+    }
+  });
 }
 
 function renderScoringTable() {
@@ -465,14 +482,123 @@ function renderMeta() {
   document.getElementById("last-updated").textContent = `Updated ${formatDate(sweepstakeData.updatedAt)}`;
 }
 
+function renderGroupStageTables() {
+  const container = document.getElementById("group-stage-tables");
+  const potOrder = ["Pot A", "Pot B", "Pot C", "Pot D", "Pot E"];
+  const rowsByPot = potOrder.map((pot) => {
+    const rows = sweepstakeData.entrants
+      .map((entrant) => ({
+        entrant,
+        team: entrant.picks[pot],
+      }))
+      .sort((a, b) => a.team.localeCompare(b.team));
+
+    const body = rows
+      .map(
+        ({ entrant, team }) => `
+          <tr>
+            <td><strong>${team}</strong></td>
+            <td>
+              <div class="table-row-owner">
+                ${avatarShellMarkup(entrant)}
+                <div>
+                  <strong>${displayName(entrant.name)}</strong>
+                  <span>${pot}</span>
+                </div>
+              </div>
+            </td>
+          </tr>
+        `
+      )
+      .join("");
+
+    return `
+      <article class="table-card">
+        <h3>${pot}</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Team</th>
+              <th>Owner</th>
+            </tr>
+          </thead>
+          <tbody>${body}</tbody>
+        </table>
+      </article>
+    `;
+  });
+
+  container.innerHTML = rowsByPot.join("");
+}
+
+function setActiveView(view) {
+  document.body.dataset.view = view;
+  document.querySelectorAll("[data-view-target]").forEach((button) => {
+    button.classList.toggle("active", button.dataset.viewTarget === view);
+  });
+}
+
+function closeMenu() {
+  document.body.classList.remove("menu-open");
+  document.getElementById("menu-toggle").setAttribute("aria-expanded", "false");
+  document.getElementById("nav-drawer").setAttribute("aria-hidden", "true");
+  document.getElementById("menu-overlay").hidden = true;
+}
+
+function openMenu() {
+  document.body.classList.add("menu-open");
+  document.getElementById("menu-toggle").setAttribute("aria-expanded", "true");
+  document.getElementById("nav-drawer").setAttribute("aria-hidden", "false");
+  document.getElementById("menu-overlay").hidden = false;
+}
+
+function syncViewForViewport() {
+  const currentView = document.body.dataset.view || "home";
+  const isCompact = window.matchMedia("(max-width: 1100px)").matches;
+
+  if (!isCompact && (currentView === "pot-winners" || currentView === "conflict-tracker")) {
+    setActiveView("home");
+  }
+}
+
+function bindNavigation() {
+  const menuToggle = document.getElementById("menu-toggle");
+  const drawerClose = document.getElementById("drawer-close");
+  const overlay = document.getElementById("menu-overlay");
+
+  menuToggle.addEventListener("click", () => {
+    if (document.body.classList.contains("menu-open")) {
+      closeMenu();
+      return;
+    }
+    openMenu();
+  });
+
+  drawerClose.addEventListener("click", closeMenu);
+  overlay.addEventListener("click", closeMenu);
+
+  document.querySelectorAll("[data-view-target]").forEach((button) => {
+    button.addEventListener("click", () => {
+      setActiveView(button.dataset.viewTarget);
+      closeMenu();
+    });
+  });
+
+  window.addEventListener("resize", syncViewForViewport);
+}
+
 function init() {
   const leaderboard = computeLeaderboard();
+  setActiveView("home");
+  bindNavigation();
+  syncViewForViewport();
   renderMeta();
   renderHeroSummary(leaderboard);
   renderLeaderboard(leaderboard);
   renderPotLeaders(leaderboard);
   renderFixtures();
   renderScoringTable();
+  renderGroupStageTables();
 }
 
 init();
