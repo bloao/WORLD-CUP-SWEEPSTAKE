@@ -659,7 +659,6 @@ body.menu-open .drawer {
     grid-template-columns: 1fr;
   }
 
-  .hero-panel,
   .desktop-home-only {
     display: none;
   }
@@ -670,6 +669,11 @@ body.menu-open .drawer {
   }
 
   .pick-breakdown {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hero-panel {
+    display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -707,6 +711,10 @@ body.menu-open .drawer {
 
   .leader-row,
   .fixture-row {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-panel {
     grid-template-columns: 1fr;
   }
 
