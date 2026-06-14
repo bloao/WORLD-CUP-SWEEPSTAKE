@@ -607,10 +607,6 @@ function ownerMarkup(team) {
     return `
       <div class="table-row-owner">
         <div class="avatar"><span>--</span></div>
-        <div>
-          <strong>Unpicked</strong>
-          <span>No sweepstake owner</span>
-        </div>
       </div>
     `;
   }
@@ -618,10 +614,6 @@ function ownerMarkup(team) {
   return `
     <div class="table-row-owner">
       ${avatarShellMarkup(entrant)}
-      <div>
-        <strong>${displayName(entrant.name)}</strong>
-        <span>${team}</span>
-      </div>
     </div>
   `;
 }
@@ -634,7 +626,7 @@ function renderGroupStageTables() {
         (row, index) => `
           <tr>
             <td class="table-rank">${index + 1}</td>
-            <td>
+            <td class="table-owner-cell">
               ${ownerMarkup(row.team)}
             </td>
             <td><strong>${row.team}</strong></td>
