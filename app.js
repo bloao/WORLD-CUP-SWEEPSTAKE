@@ -155,7 +155,7 @@ const scoringOrder = [
 ];
 
 const groupStandingsSnapshot = {
-  updatedAt: "2026-06-14T03:06:00Z",
+  updatedAt: "2026-06-15T17:58:00Z",
   sourceLabel: "SB Nation standings snapshot",
   groups: [
     {
@@ -189,27 +189,27 @@ const groupStandingsSnapshot = {
       name: "Group D",
       teams: [
         { team: "United States", played: 1, wins: 1, draws: 0, losses: 0, gf: 4, ga: 1, gd: 3, points: 3 },
-        { team: "Türkiye", played: 0, wins: 0, draws: 0, losses: 0, gf: 0, ga: 0, gd: 0, points: 0 },
-        { team: "Australia", played: 0, wins: 0, draws: 0, losses: 0, gf: 0, ga: 0, gd: 0, points: 0 },
+        { team: "Australia", played: 1, wins: 1, draws: 0, losses: 0, gf: 2, ga: 0, gd: 2, points: 3 },
+        { team: "Türkiye", played: 1, wins: 0, draws: 0, losses: 1, gf: 0, ga: 2, gd: -2, points: 0 },
         { team: "Paraguay", played: 1, wins: 0, draws: 0, losses: 1, gf: 1, ga: 4, gd: -3, points: 0 },
       ],
     },
     {
       name: "Group E",
       teams: [
-        { team: "Germany", played: 0, wins: 0, draws: 0, losses: 0, gf: 0, ga: 0, gd: 0, points: 0 },
-        { team: "Curaçao", played: 0, wins: 0, draws: 0, losses: 0, gf: 0, ga: 0, gd: 0, points: 0 },
-        { team: "Côte d’Ivoire", played: 0, wins: 0, draws: 0, losses: 0, gf: 0, ga: 0, gd: 0, points: 0 },
-        { team: "Ecuador", played: 0, wins: 0, draws: 0, losses: 0, gf: 0, ga: 0, gd: 0, points: 0 },
+        { team: "Germany", played: 1, wins: 1, draws: 0, losses: 0, gf: 7, ga: 1, gd: 6, points: 3 },
+        { team: "Côte d’Ivoire", played: 1, wins: 1, draws: 0, losses: 0, gf: 1, ga: 0, gd: 1, points: 3 },
+        { team: "Ecuador", played: 1, wins: 0, draws: 0, losses: 1, gf: 0, ga: 1, gd: -1, points: 0 },
+        { team: "Curaçao", played: 1, wins: 0, draws: 0, losses: 1, gf: 1, ga: 7, gd: -6, points: 0 },
       ],
     },
     {
       name: "Group F",
       teams: [
-        { team: "Netherlands", played: 0, wins: 0, draws: 0, losses: 0, gf: 0, ga: 0, gd: 0, points: 0 },
-        { team: "Japan", played: 0, wins: 0, draws: 0, losses: 0, gf: 0, ga: 0, gd: 0, points: 0 },
-        { team: "Sweden", played: 0, wins: 0, draws: 0, losses: 0, gf: 0, ga: 0, gd: 0, points: 0 },
-        { team: "Tunisia", played: 0, wins: 0, draws: 0, losses: 0, gf: 0, ga: 0, gd: 0, points: 0 },
+        { team: "Sweden", played: 1, wins: 1, draws: 0, losses: 0, gf: 5, ga: 1, gd: 4, points: 3 },
+        { team: "Netherlands", played: 1, wins: 0, draws: 1, losses: 0, gf: 2, ga: 2, gd: 0, points: 1 },
+        { team: "Japan", played: 1, wins: 0, draws: 1, losses: 0, gf: 2, ga: 2, gd: 0, points: 1 },
+        { team: "Tunisia", played: 1, wins: 0, draws: 0, losses: 1, gf: 1, ga: 5, gd: -4, points: 0 },
       ],
     },
     {
@@ -224,8 +224,8 @@ const groupStandingsSnapshot = {
     {
       name: "Group H",
       teams: [
-        { team: "Spain", played: 0, wins: 0, draws: 0, losses: 0, gf: 0, ga: 0, gd: 0, points: 0 },
-        { team: "Cabo Verde", played: 0, wins: 0, draws: 0, losses: 0, gf: 0, ga: 0, gd: 0, points: 0 },
+        { team: "Spain", played: 1, wins: 0, draws: 1, losses: 0, gf: 0, ga: 0, gd: 0, points: 1 },
+        { team: "Cabo Verde", played: 1, wins: 0, draws: 1, losses: 0, gf: 0, ga: 0, gd: 0, points: 1 },
         { team: "Saudi Arabia", played: 0, wins: 0, draws: 0, losses: 0, gf: 0, ga: 0, gd: 0, points: 0 },
         { team: "Uruguay", played: 0, wins: 0, draws: 0, losses: 0, gf: 0, ga: 0, gd: 0, points: 0 },
       ],
