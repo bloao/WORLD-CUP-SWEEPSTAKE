@@ -155,8 +155,8 @@ const scoringOrder = [
 ];
 
 const groupStandingsSnapshot = {
-  updatedAt: "2026-06-15T17:58:00Z",
-  sourceLabel: "SB Nation standings snapshot",
+  updatedAt: "2026-06-16",
+  sourceLabel: "SB Nation + Guardian standings snapshot",
   groups: [
     {
       name: "Group A",
@@ -215,10 +215,10 @@ const groupStandingsSnapshot = {
     {
       name: "Group G",
       teams: [
-        { team: "Belgium", played: 0, wins: 0, draws: 0, losses: 0, gf: 0, ga: 0, gd: 0, points: 0 },
-        { team: "Egypt", played: 0, wins: 0, draws: 0, losses: 0, gf: 0, ga: 0, gd: 0, points: 0 },
-        { team: "Iran", played: 0, wins: 0, draws: 0, losses: 0, gf: 0, ga: 0, gd: 0, points: 0 },
-        { team: "New Zealand", played: 0, wins: 0, draws: 0, losses: 0, gf: 0, ga: 0, gd: 0, points: 0 },
+        { team: "Iran", played: 1, wins: 0, draws: 1, losses: 0, gf: 2, ga: 2, gd: 0, points: 1 },
+        { team: "New Zealand", played: 1, wins: 0, draws: 1, losses: 0, gf: 2, ga: 2, gd: 0, points: 1 },
+        { team: "Belgium", played: 1, wins: 0, draws: 1, losses: 0, gf: 1, ga: 1, gd: 0, points: 1 },
+        { team: "Egypt", played: 1, wins: 0, draws: 1, losses: 0, gf: 1, ga: 1, gd: 0, points: 1 },
       ],
     },
     {
