@@ -226,8 +226,8 @@ const groupStandingsSnapshot = {
       teams: [
         { team: "Spain", played: 1, wins: 0, draws: 1, losses: 0, gf: 0, ga: 0, gd: 0, points: 1 },
         { team: "Cabo Verde", played: 1, wins: 0, draws: 1, losses: 0, gf: 0, ga: 0, gd: 0, points: 1 },
-        { team: "Saudi Arabia", played: 0, wins: 0, draws: 0, losses: 0, gf: 0, ga: 0, gd: 0, points: 0 },
-        { team: "Uruguay", played: 0, wins: 0, draws: 0, losses: 0, gf: 0, ga: 0, gd: 0, points: 0 },
+        { team: "Saudi Arabia", played: 1, wins: 0, draws: 1, losses: 0, gf: 1, ga: 1, gd: 0, points: 1 },
+        { team: "Uruguay", played: 1, wins: 0, draws: 1, losses: 0, gf: 1, ga: 1, gd: 0, points: 1 },
       ],
     },
     {
