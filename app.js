@@ -155,7 +155,7 @@ const scoringOrder = [
 ];
 
 const groupStandingsSnapshot = {
-  updatedAt: "2026-06-16",
+  updatedAt: "2026-06-17",
   sourceLabel: "SB Nation + Guardian standings snapshot",
   groups: [
     {
@@ -233,19 +233,19 @@ const groupStandingsSnapshot = {
     {
       name: "Group I",
       teams: [
-        { team: "France", played: 0, wins: 0, draws: 0, losses: 0, gf: 0, ga: 0, gd: 0, points: 0 },
-        { team: "Senegal", played: 0, wins: 0, draws: 0, losses: 0, gf: 0, ga: 0, gd: 0, points: 0 },
-        { team: "Iraq", played: 0, wins: 0, draws: 0, losses: 0, gf: 0, ga: 0, gd: 0, points: 0 },
-        { team: "Norway", played: 0, wins: 0, draws: 0, losses: 0, gf: 0, ga: 0, gd: 0, points: 0 },
+        { team: "Norway", played: 1, wins: 1, draws: 0, losses: 0, gf: 4, ga: 1, gd: 3, points: 3 },
+        { team: "France", played: 1, wins: 1, draws: 0, losses: 0, gf: 3, ga: 1, gd: 2, points: 3 },
+        { team: "Senegal", played: 1, wins: 0, draws: 0, losses: 1, gf: 1, ga: 3, gd: -2, points: 0 },
+        { team: "Iraq", played: 1, wins: 0, draws: 0, losses: 1, gf: 1, ga: 4, gd: -3, points: 0 },
       ],
     },
     {
       name: "Group J",
       teams: [
-        { team: "Argentina", played: 0, wins: 0, draws: 0, losses: 0, gf: 0, ga: 0, gd: 0, points: 0 },
-        { team: "Algeria", played: 0, wins: 0, draws: 0, losses: 0, gf: 0, ga: 0, gd: 0, points: 0 },
-        { team: "Austria", played: 0, wins: 0, draws: 0, losses: 0, gf: 0, ga: 0, gd: 0, points: 0 },
-        { team: "Jordan", played: 0, wins: 0, draws: 0, losses: 0, gf: 0, ga: 0, gd: 0, points: 0 },
+        { team: "Argentina", played: 1, wins: 1, draws: 0, losses: 0, gf: 3, ga: 0, gd: 3, points: 3 },
+        { team: "Austria", played: 1, wins: 1, draws: 0, losses: 0, gf: 3, ga: 1, gd: 2, points: 3 },
+        { team: "Jordan", played: 1, wins: 0, draws: 0, losses: 1, gf: 1, ga: 3, gd: -2, points: 0 },
+        { team: "Algeria", played: 1, wins: 0, draws: 0, losses: 1, gf: 0, ga: 3, gd: -3, points: 0 },
       ],
     },
     {
