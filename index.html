@@ -21,6 +21,7 @@
       </div>
       <nav class="drawer-nav" aria-label="Primary">
         <button class="drawer-link active" data-view-target="home" data-device="all" type="button">Home</button>
+        <button class="drawer-link" data-view-target="scoring" data-device="all" type="button">How The Points Are Calculated</button>
         <button class="drawer-link mobile-only" data-view-target="pot-winners" data-device="mobile" type="button">Pot winners</button>
         <button class="drawer-link mobile-only" data-view-target="conflict-tracker" data-device="mobile" type="button">Conflict tracker</button>
         <button class="drawer-link" data-view-target="group-stage-tables" data-device="all" type="button">Group Stage Tables</button>
@@ -58,17 +59,6 @@
                 <div class="leaderboard-list" id="leaderboard-list"></div>
               </section>
 
-              <section class="panel scoring-panel desktop-home-only">
-                <div class="panel-heading">
-                  <div>
-                    <p class="section-kicker">Scoring</p>
-                    <h2>How points are calculated</h2>
-                  </div>
-                </div>
-                <div class="scoring-table-wrap">
-                  <table class="scoring-table" id="scoring-table"></table>
-                </div>
-              </section>
             </div>
 
             <div class="column-stack side-column desktop-home-only">
@@ -105,6 +95,22 @@
                 </div>
               </div>
               <div class="mini-grid" id="pot-leaders-mobile"></div>
+            </section>
+          </div>
+        </section>
+
+        <section class="view" data-view="scoring">
+          <div class="single-view-shell">
+            <section class="panel">
+              <div class="panel-heading">
+                <div>
+                  <p class="section-kicker">Scoring</p>
+                  <h2>How points are calculated</h2>
+                </div>
+              </div>
+              <div class="scoring-table-wrap">
+                <table class="scoring-table" id="scoring-table"></table>
+              </div>
             </section>
           </div>
         </section>

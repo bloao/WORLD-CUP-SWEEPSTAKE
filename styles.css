@@ -60,6 +60,7 @@ button {
 }
 
 body[data-view="home"] .view-home,
+body[data-view="scoring"] .view[data-view="scoring"],
 body[data-view="pot-winners"] .view[data-view="pot-winners"],
 body[data-view="conflict-tracker"] .view[data-view="conflict-tracker"],
 body[data-view="group-stage-tables"] .view[data-view="group-stage-tables"] {
