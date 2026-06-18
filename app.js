@@ -155,7 +155,7 @@ const scoringOrder = [
 ];
 
 const groupStandingsSnapshot = {
-  updatedAt: "2026-06-17",
+  updatedAt: "2026-06-18",
   sourceLabel: "SB Nation + Guardian standings snapshot",
   groups: [
     {
@@ -251,19 +251,19 @@ const groupStandingsSnapshot = {
     {
       name: "Group K",
       teams: [
-        { team: "Portugal", played: 0, wins: 0, draws: 0, losses: 0, gf: 0, ga: 0, gd: 0, points: 0 },
-        { team: "DR Congo", played: 0, wins: 0, draws: 0, losses: 0, gf: 0, ga: 0, gd: 0, points: 0 },
-        { team: "Uzbekistan", played: 0, wins: 0, draws: 0, losses: 0, gf: 0, ga: 0, gd: 0, points: 0 },
-        { team: "Colombia", played: 0, wins: 0, draws: 0, losses: 0, gf: 0, ga: 0, gd: 0, points: 0 },
+        { team: "Colombia", played: 1, wins: 1, draws: 0, losses: 0, gf: 3, ga: 1, gd: 2, points: 3 },
+        { team: "Portugal", played: 1, wins: 0, draws: 1, losses: 0, gf: 1, ga: 1, gd: 0, points: 1 },
+        { team: "DR Congo", played: 1, wins: 0, draws: 1, losses: 0, gf: 1, ga: 1, gd: 0, points: 1 },
+        { team: "Uzbekistan", played: 1, wins: 0, draws: 0, losses: 1, gf: 1, ga: 3, gd: -2, points: 0 },
       ],
     },
     {
       name: "Group L",
       teams: [
-        { team: "England", played: 0, wins: 0, draws: 0, losses: 0, gf: 0, ga: 0, gd: 0, points: 0 },
-        { team: "Croatia", played: 0, wins: 0, draws: 0, losses: 0, gf: 0, ga: 0, gd: 0, points: 0 },
-        { team: "Ghana", played: 0, wins: 0, draws: 0, losses: 0, gf: 0, ga: 0, gd: 0, points: 0 },
-        { team: "Panama", played: 0, wins: 0, draws: 0, losses: 0, gf: 0, ga: 0, gd: 0, points: 0 },
+        { team: "England", played: 1, wins: 1, draws: 0, losses: 0, gf: 4, ga: 2, gd: 2, points: 3 },
+        { team: "Ghana", played: 1, wins: 1, draws: 0, losses: 0, gf: 1, ga: 0, gd: 1, points: 3 },
+        { team: "Panama", played: 1, wins: 0, draws: 0, losses: 1, gf: 0, ga: 1, gd: -1, points: 0 },
+        { team: "Croatia", played: 1, wins: 0, draws: 0, losses: 1, gf: 2, ga: 4, gd: -2, points: 0 },
       ],
     },
   ],
