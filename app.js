@@ -155,25 +155,25 @@ const scoringOrder = [
 ];
 
 const groupStandingsSnapshot = {
-  updatedAt: "2026-06-18",
+  updatedAt: "2026-06-19",
   sourceLabel: "SB Nation + Guardian standings snapshot",
   groups: [
     {
       name: "Group A",
       teams: [
-        { team: "Mexico", played: 1, wins: 1, draws: 0, losses: 0, gf: 2, ga: 0, gd: 2, points: 3 },
-        { team: "South Korea", played: 1, wins: 1, draws: 0, losses: 0, gf: 2, ga: 1, gd: 1, points: 3 },
-        { team: "Czech Republic", played: 1, wins: 0, draws: 0, losses: 1, gf: 1, ga: 2, gd: -1, points: 0 },
-        { team: "South Africa", played: 1, wins: 0, draws: 0, losses: 1, gf: 0, ga: 2, gd: -2, points: 0 },
+        { team: "Mexico", played: 2, wins: 2, draws: 0, losses: 0, gf: 3, ga: 0, gd: 3, points: 6 },
+        { team: "South Korea", played: 2, wins: 1, draws: 0, losses: 1, gf: 2, ga: 2, gd: 0, points: 3 },
+        { team: "Czech Republic", played: 2, wins: 0, draws: 1, losses: 1, gf: 2, ga: 3, gd: -1, points: 1 },
+        { team: "South Africa", played: 2, wins: 0, draws: 1, losses: 1, gf: 1, ga: 3, gd: -2, points: 1 },
       ],
     },
     {
       name: "Group B",
       teams: [
-        { team: "Canada", played: 1, wins: 0, draws: 1, losses: 0, gf: 1, ga: 1, gd: 0, points: 1 },
-        { team: "Bosnia and Herzegovina", played: 1, wins: 0, draws: 1, losses: 0, gf: 1, ga: 1, gd: 0, points: 1 },
-        { team: "Qatar", played: 1, wins: 0, draws: 1, losses: 0, gf: 1, ga: 1, gd: 0, points: 1 },
-        { team: "Switzerland", played: 1, wins: 0, draws: 1, losses: 0, gf: 1, ga: 1, gd: 0, points: 1 },
+        { team: "Canada", played: 2, wins: 1, draws: 1, losses: 0, gf: 7, ga: 1, gd: 6, points: 4 },
+        { team: "Switzerland", played: 2, wins: 1, draws: 1, losses: 0, gf: 5, ga: 2, gd: 3, points: 4 },
+        { team: "Bosnia and Herzegovina", played: 2, wins: 0, draws: 1, losses: 1, gf: 2, ga: 5, gd: -3, points: 1 },
+        { team: "Qatar", played: 2, wins: 0, draws: 1, losses: 1, gf: 1, ga: 7, gd: -6, points: 1 },
       ],
     },
     {
@@ -601,6 +601,17 @@ function ownerForTeam(team) {
   return sweepstakeData.entrants.find((entrant) => Object.values(entrant.picks).includes(team)) || null;
 }
 
+function potForTeam(team) {
+  for (const entrant of sweepstakeData.entrants) {
+    for (const [pot, pickedTeam] of Object.entries(entrant.picks)) {
+      if (pickedTeam === team) {
+        return pot.replace("Pot ", "");
+      }
+    }
+  }
+  return "";
+}
+
 function ownerMarkup(team) {
   const entrant = ownerForTeam(team);
   if (!entrant) {
@@ -629,7 +640,12 @@ function renderGroupStageTables() {
             <td class="table-owner-cell">
               ${ownerMarkup(row.team)}
             </td>
-            <td><strong>${row.team}</strong></td>
+            <td>
+              <div class="table-team-cell">
+                <span class="table-pot-letter">${potForTeam(row.team)}</span>
+                <strong>${row.team}</strong>
+              </div>
+            </td>
             <td>${row.played}</td>
             <td>${row.wins}</td>
             <td>${row.draws}</td>

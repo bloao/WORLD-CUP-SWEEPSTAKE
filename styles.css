@@ -604,6 +604,21 @@ body.menu-open .drawer {
   text-align: center;
 }
 
+.table-team-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.table-pot-letter {
+  min-width: 18px;
+  font-family: "Space Mono", monospace;
+  font-size: 0.72rem;
+  line-height: 1;
+  color: var(--teal);
+  text-transform: lowercase;
+}
+
 .table-points {
   font-weight: 800;
 }
@@ -627,6 +642,15 @@ body.menu-open .drawer {
     width: 32px;
     height: 32px;
     border-radius: 10px;
+  }
+
+  .table-team-cell {
+    gap: 6px;
+  }
+
+  .table-pot-letter {
+    min-width: 14px;
+    font-size: 0.66rem;
   }
 
   .table-rank,
