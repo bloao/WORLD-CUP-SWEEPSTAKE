@@ -155,7 +155,7 @@ const scoringOrder = [
 ];
 
 const groupStandingsSnapshot = {
-  updatedAt: "2026-06-19",
+  updatedAt: "2026-06-21",
   sourceLabel: "SB Nation + Guardian standings snapshot",
   groups: [
     {
@@ -179,55 +179,55 @@ const groupStandingsSnapshot = {
     {
       name: "Group C",
       teams: [
-        { team: "Scotland", played: 1, wins: 1, draws: 0, losses: 0, gf: 1, ga: 0, gd: 1, points: 3 },
-        { team: "Brazil", played: 1, wins: 0, draws: 1, losses: 0, gf: 1, ga: 1, gd: 0, points: 1 },
-        { team: "Morocco", played: 1, wins: 0, draws: 1, losses: 0, gf: 1, ga: 1, gd: 0, points: 1 },
-        { team: "Haiti", played: 1, wins: 0, draws: 0, losses: 1, gf: 0, ga: 1, gd: -1, points: 0 },
+        { team: "Brazil", played: 2, wins: 1, draws: 1, losses: 0, gf: 4, ga: 1, gd: 3, points: 4 },
+        { team: "Morocco", played: 2, wins: 1, draws: 1, losses: 0, gf: 2, ga: 1, gd: 1, points: 4 },
+        { team: "Scotland", played: 2, wins: 1, draws: 0, losses: 1, gf: 1, ga: 1, gd: 0, points: 3 },
+        { team: "Haiti", played: 2, wins: 0, draws: 0, losses: 2, gf: 0, ga: 4, gd: -4, points: 0 },
       ],
     },
     {
       name: "Group D",
       teams: [
-        { team: "United States", played: 1, wins: 1, draws: 0, losses: 0, gf: 4, ga: 1, gd: 3, points: 3 },
-        { team: "Australia", played: 1, wins: 1, draws: 0, losses: 0, gf: 2, ga: 0, gd: 2, points: 3 },
-        { team: "Türkiye", played: 1, wins: 0, draws: 0, losses: 1, gf: 0, ga: 2, gd: -2, points: 0 },
-        { team: "Paraguay", played: 1, wins: 0, draws: 0, losses: 1, gf: 1, ga: 4, gd: -3, points: 0 },
+        { team: "United States", played: 2, wins: 2, draws: 0, losses: 0, gf: 6, ga: 1, gd: 5, points: 6 },
+        { team: "Australia", played: 2, wins: 1, draws: 0, losses: 1, gf: 2, ga: 2, gd: 0, points: 3 },
+        { team: "Paraguay", played: 2, wins: 1, draws: 0, losses: 1, gf: 2, ga: 4, gd: -2, points: 3 },
+        { team: "Türkiye", played: 2, wins: 0, draws: 0, losses: 2, gf: 0, ga: 3, gd: -3, points: 0 },
       ],
     },
     {
       name: "Group E",
       teams: [
-        { team: "Germany", played: 1, wins: 1, draws: 0, losses: 0, gf: 7, ga: 1, gd: 6, points: 3 },
-        { team: "Côte d’Ivoire", played: 1, wins: 1, draws: 0, losses: 0, gf: 1, ga: 0, gd: 1, points: 3 },
-        { team: "Ecuador", played: 1, wins: 0, draws: 0, losses: 1, gf: 0, ga: 1, gd: -1, points: 0 },
-        { team: "Curaçao", played: 1, wins: 0, draws: 0, losses: 1, gf: 1, ga: 7, gd: -6, points: 0 },
+        { team: "Germany", played: 2, wins: 2, draws: 0, losses: 0, gf: 9, ga: 2, gd: 7, points: 6 },
+        { team: "Côte d’Ivoire", played: 2, wins: 1, draws: 0, losses: 1, gf: 2, ga: 2, gd: 0, points: 3 },
+        { team: "Ecuador", played: 2, wins: 0, draws: 1, losses: 1, gf: 0, ga: 1, gd: -1, points: 1 },
+        { team: "Curaçao", played: 2, wins: 0, draws: 1, losses: 1, gf: 1, ga: 7, gd: -6, points: 1 },
       ],
     },
     {
       name: "Group F",
       teams: [
-        { team: "Sweden", played: 1, wins: 1, draws: 0, losses: 0, gf: 5, ga: 1, gd: 4, points: 3 },
-        { team: "Netherlands", played: 1, wins: 0, draws: 1, losses: 0, gf: 2, ga: 2, gd: 0, points: 1 },
-        { team: "Japan", played: 1, wins: 0, draws: 1, losses: 0, gf: 2, ga: 2, gd: 0, points: 1 },
-        { team: "Tunisia", played: 1, wins: 0, draws: 0, losses: 1, gf: 1, ga: 5, gd: -4, points: 0 },
+        { team: "Netherlands", played: 2, wins: 1, draws: 1, losses: 0, gf: 7, ga: 3, gd: 4, points: 4 },
+        { team: "Japan", played: 2, wins: 1, draws: 1, losses: 0, gf: 6, ga: 2, gd: 4, points: 4 },
+        { team: "Sweden", played: 2, wins: 1, draws: 0, losses: 1, gf: 6, ga: 6, gd: 0, points: 3 },
+        { team: "Tunisia", played: 2, wins: 0, draws: 0, losses: 2, gf: 1, ga: 9, gd: -8, points: 0 },
       ],
     },
     {
       name: "Group G",
       teams: [
-        { team: "Iran", played: 1, wins: 0, draws: 1, losses: 0, gf: 2, ga: 2, gd: 0, points: 1 },
+        { team: "Iran", played: 2, wins: 0, draws: 2, losses: 0, gf: 2, ga: 2, gd: 0, points: 2 },
+        { team: "Belgium", played: 2, wins: 0, draws: 2, losses: 0, gf: 1, ga: 1, gd: 0, points: 2 },
         { team: "New Zealand", played: 1, wins: 0, draws: 1, losses: 0, gf: 2, ga: 2, gd: 0, points: 1 },
-        { team: "Belgium", played: 1, wins: 0, draws: 1, losses: 0, gf: 1, ga: 1, gd: 0, points: 1 },
         { team: "Egypt", played: 1, wins: 0, draws: 1, losses: 0, gf: 1, ga: 1, gd: 0, points: 1 },
       ],
     },
     {
       name: "Group H",
       teams: [
-        { team: "Spain", played: 1, wins: 0, draws: 1, losses: 0, gf: 0, ga: 0, gd: 0, points: 1 },
-        { team: "Cabo Verde", played: 1, wins: 0, draws: 1, losses: 0, gf: 0, ga: 0, gd: 0, points: 1 },
-        { team: "Saudi Arabia", played: 1, wins: 0, draws: 1, losses: 0, gf: 1, ga: 1, gd: 0, points: 1 },
+        { team: "Spain", played: 2, wins: 1, draws: 1, losses: 0, gf: 4, ga: 0, gd: 4, points: 4 },
         { team: "Uruguay", played: 1, wins: 0, draws: 1, losses: 0, gf: 1, ga: 1, gd: 0, points: 1 },
+        { team: "Cabo Verde", played: 1, wins: 0, draws: 1, losses: 0, gf: 0, ga: 0, gd: 0, points: 1 },
+        { team: "Saudi Arabia", played: 2, wins: 0, draws: 1, losses: 1, gf: 1, ga: 5, gd: -4, points: 1 },
       ],
     },
     {
