@@ -155,7 +155,7 @@ const scoringOrder = [
 ];
 
 const groupStandingsSnapshot = {
-  updatedAt: "2026-06-21",
+  updatedAt: "2026-06-24",
   sourceLabel: "SB Nation + Guardian standings snapshot",
   groups: [
     {
@@ -215,55 +215,55 @@ const groupStandingsSnapshot = {
     {
       name: "Group G",
       teams: [
+        { team: "Egypt", played: 2, wins: 1, draws: 1, losses: 0, gf: 4, ga: 2, gd: 2, points: 4 },
         { team: "Iran", played: 2, wins: 0, draws: 2, losses: 0, gf: 2, ga: 2, gd: 0, points: 2 },
         { team: "Belgium", played: 2, wins: 0, draws: 2, losses: 0, gf: 1, ga: 1, gd: 0, points: 2 },
-        { team: "New Zealand", played: 1, wins: 0, draws: 1, losses: 0, gf: 2, ga: 2, gd: 0, points: 1 },
-        { team: "Egypt", played: 1, wins: 0, draws: 1, losses: 0, gf: 1, ga: 1, gd: 0, points: 1 },
+        { team: "New Zealand", played: 2, wins: 0, draws: 1, losses: 1, gf: 3, ga: 5, gd: -2, points: 1 },
       ],
     },
     {
       name: "Group H",
       teams: [
         { team: "Spain", played: 2, wins: 1, draws: 1, losses: 0, gf: 4, ga: 0, gd: 4, points: 4 },
-        { team: "Uruguay", played: 1, wins: 0, draws: 1, losses: 0, gf: 1, ga: 1, gd: 0, points: 1 },
-        { team: "Cabo Verde", played: 1, wins: 0, draws: 1, losses: 0, gf: 0, ga: 0, gd: 0, points: 1 },
+        { team: "Uruguay", played: 2, wins: 0, draws: 2, losses: 0, gf: 3, ga: 3, gd: 0, points: 2 },
+        { team: "Cabo Verde", played: 2, wins: 0, draws: 2, losses: 0, gf: 2, ga: 2, gd: 0, points: 2 },
         { team: "Saudi Arabia", played: 2, wins: 0, draws: 1, losses: 1, gf: 1, ga: 5, gd: -4, points: 1 },
       ],
     },
     {
       name: "Group I",
       teams: [
-        { team: "Norway", played: 1, wins: 1, draws: 0, losses: 0, gf: 4, ga: 1, gd: 3, points: 3 },
-        { team: "France", played: 1, wins: 1, draws: 0, losses: 0, gf: 3, ga: 1, gd: 2, points: 3 },
-        { team: "Senegal", played: 1, wins: 0, draws: 0, losses: 1, gf: 1, ga: 3, gd: -2, points: 0 },
-        { team: "Iraq", played: 1, wins: 0, draws: 0, losses: 1, gf: 1, ga: 4, gd: -3, points: 0 },
+        { team: "France", played: 2, wins: 2, draws: 0, losses: 0, gf: 6, ga: 1, gd: 5, points: 6 },
+        { team: "Norway", played: 2, wins: 2, draws: 0, losses: 0, gf: 7, ga: 3, gd: 4, points: 6 },
+        { team: "Senegal", played: 2, wins: 0, draws: 0, losses: 2, gf: 3, ga: 6, gd: -3, points: 0 },
+        { team: "Iraq", played: 2, wins: 0, draws: 0, losses: 2, gf: 1, ga: 7, gd: -6, points: 0 },
       ],
     },
     {
       name: "Group J",
       teams: [
-        { team: "Argentina", played: 1, wins: 1, draws: 0, losses: 0, gf: 3, ga: 0, gd: 3, points: 3 },
-        { team: "Austria", played: 1, wins: 1, draws: 0, losses: 0, gf: 3, ga: 1, gd: 2, points: 3 },
-        { team: "Jordan", played: 1, wins: 0, draws: 0, losses: 1, gf: 1, ga: 3, gd: -2, points: 0 },
-        { team: "Algeria", played: 1, wins: 0, draws: 0, losses: 1, gf: 0, ga: 3, gd: -3, points: 0 },
+        { team: "Argentina", played: 2, wins: 2, draws: 0, losses: 0, gf: 5, ga: 0, gd: 5, points: 6 },
+        { team: "Austria", played: 2, wins: 1, draws: 0, losses: 1, gf: 3, ga: 3, gd: 0, points: 3 },
+        { team: "Algeria", played: 2, wins: 1, draws: 0, losses: 1, gf: 2, ga: 4, gd: -2, points: 3 },
+        { team: "Jordan", played: 2, wins: 0, draws: 0, losses: 2, gf: 2, ga: 5, gd: -3, points: 0 },
       ],
     },
     {
       name: "Group K",
       teams: [
-        { team: "Colombia", played: 1, wins: 1, draws: 0, losses: 0, gf: 3, ga: 1, gd: 2, points: 3 },
-        { team: "Portugal", played: 1, wins: 0, draws: 1, losses: 0, gf: 1, ga: 1, gd: 0, points: 1 },
-        { team: "DR Congo", played: 1, wins: 0, draws: 1, losses: 0, gf: 1, ga: 1, gd: 0, points: 1 },
-        { team: "Uzbekistan", played: 1, wins: 0, draws: 0, losses: 1, gf: 1, ga: 3, gd: -2, points: 0 },
+        { team: "Colombia", played: 2, wins: 2, draws: 0, losses: 0, gf: 4, ga: 1, gd: 3, points: 6 },
+        { team: "Portugal", played: 2, wins: 1, draws: 1, losses: 0, gf: 6, ga: 1, gd: 5, points: 4 },
+        { team: "DR Congo", played: 2, wins: 0, draws: 1, losses: 1, gf: 1, ga: 2, gd: -1, points: 1 },
+        { team: "Uzbekistan", played: 2, wins: 0, draws: 0, losses: 2, gf: 1, ga: 8, gd: -7, points: 0 },
       ],
     },
     {
       name: "Group L",
       teams: [
-        { team: "England", played: 1, wins: 1, draws: 0, losses: 0, gf: 4, ga: 2, gd: 2, points: 3 },
-        { team: "Ghana", played: 1, wins: 1, draws: 0, losses: 0, gf: 1, ga: 0, gd: 1, points: 3 },
-        { team: "Panama", played: 1, wins: 0, draws: 0, losses: 1, gf: 0, ga: 1, gd: -1, points: 0 },
-        { team: "Croatia", played: 1, wins: 0, draws: 0, losses: 1, gf: 2, ga: 4, gd: -2, points: 0 },
+        { team: "England", played: 2, wins: 1, draws: 1, losses: 0, gf: 4, ga: 2, gd: 2, points: 4 },
+        { team: "Ghana", played: 2, wins: 1, draws: 1, losses: 0, gf: 1, ga: 0, gd: 1, points: 4 },
+        { team: "Croatia", played: 2, wins: 1, draws: 0, losses: 1, gf: 3, ga: 4, gd: -1, points: 3 },
+        { team: "Panama", played: 2, wins: 0, draws: 0, losses: 2, gf: 0, ga: 2, gd: -2, points: 0 },
       ],
     },
   ],
