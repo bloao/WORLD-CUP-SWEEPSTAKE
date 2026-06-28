@@ -136,6 +136,7 @@ const sweepstakeData = {
     France: { first: true },
     Colombia: { first: true },
     Australia: { second: true },
+    Sweden: { groupThird: true },
     Qatar: {},
     "Saudi Arabia": {},
   },
