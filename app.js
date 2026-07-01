@@ -329,9 +329,9 @@ function renderHeroSummary(leaderboard) {
       <small>${leaderPointsLabel}</small>
     </div>
     <div class="summary-card">
-      <span>Fixture clashes</span>
-      <strong>${countConflicts()}</strong>
-      <small>Contestants</small>
+      <span>Contestants</span>
+      <strong>${sweepstakeData.entrants.length}</strong>
+      <small>In the sweepstake</small>
       <div class="contestant-row">${contestantMarkup}</div>
     </div>
   `;
