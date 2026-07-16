@@ -18,7 +18,7 @@ const worldCupFixtures = [
 ];
 
 const sweepstakeData = {
-  updatedAt: "2026-07-07",
+  updatedAt: "2026-07-16",
   scoring: {
     "Pot A": { first: 2, second: 1, groupThird: 0, ro32: 1, ro16: 1, qf: 1, sf: 2, third: 3, runnerUp: 5, winner: 10 },
     "Pot B": { first: 3, second: 1, groupThird: 0, ro32: 2, ro16: 2, qf: 2, sf: 3, third: 4, runnerUp: 7, winner: 14 },
@@ -38,7 +38,7 @@ const sweepstakeData = {
     { name: "gash", photoUrl: "./gashpfp.JPG", photoScale: 0.7, photoOffsetX: "0%", photoOffsetY: "-33%", photoRadius: "20px", picks: { "Pot A": "France", "Pot B": "Colombia", "Pot C": "Australia", "Pot D": "Qatar", "Pot E": "Saudi Arabia" } },
   ],
   teamResults: {
-    Spain: { first: true, ro32: true, ro16: true, qf: true },
+    Spain: { first: true, ro32: true, ro16: true, qf: true, sf: true },
     Germany: { first: true },
     Norway: { second: true, ro32: true, ro16: true },
     Panama: {},
@@ -58,7 +58,7 @@ const sweepstakeData = {
     Austria: { second: true },
     Tunisia: {},
     "Cabo Verde": { second: true },
-    Argentina: { first: true, ro32: true, ro16: true, qf: true },
+    Argentina: { first: true, ro32: true, ro16: true, qf: true, sf: true },
     Senegal: { groupThird: true },
     Iran: {},
     "DR Congo": { groupThird: true },
